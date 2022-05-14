@@ -25,8 +25,24 @@ root.render(
   </React.StrictMode>
 );
 ````
-### React Lifecycle
-`Lifecycle`
+
+### Lifecycle Methods (v 16.4+)
+##### Mount Phase
+- `constructor`: runs only once
+- `static getDerievedStateFromProps`: Update state from props. This is static method as developer should not use 'this' in method.
+- `render`: returns body of component (jsx)
+- `componentDidMount`: do something after compoenent mount in this lifecycle
+
+##### Update Phase
+- `static getDerievedStateFromProps`
+- `shouldComponentUpdate`: Make decision here that the component should rerender or not
+- `render`
+- `getSnpashotBeforeUpdate`: Before updating if we want some old state values we can get here
+- `componentDidUpdate`: do something after component update
+
+##### Unmount
+- `componentWillUnMount`
+
 
 ### How to do typecheck 
 We can use `prop-types` library or `typescript`
@@ -269,22 +285,6 @@ const App = () => {
 
 export default App;
 ```
-### Lifecycle Methods (v 16.4+)
-##### Mount Phase
-- `constructor`: runs only once
-- `static getDerievedStateFromProps`: Update state from props. This is static method as developer should not use 'this' in method.
-- `render`: returns body of component (jsx)
-- `componentDidMount`: do something after compoenent mount in this lifecycle
-
-##### Update Phase
-- `static getDerievedStateFromProps`
-- `shouldComponentUpdate`: Make decision here that the component should rerender or not
-- `render`
-- `getSnpashotBeforeUpdate`: Before updating if we want some old state values we can get here
-- `componentDidUpdate`: do something after component update
-
-##### Unmount
-- `componentWillUnMount`
 
 ### Explain Error Boundaries
 A custom component used to catch errors, similar like a try catch block
