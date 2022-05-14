@@ -305,7 +305,85 @@ It has two lifecycle method
 
 ### What is context-api
 context api used to allow to access props to descendents childs. Solution for prop drilling
+`Context.js`
+```
+import React, { createContext, useState } from "react";
 
+export const AppContext = createContext();
+
+const { Provider } = AppContext;
+
+export const AppProvider = (props) => {
+  const [count, setCount] = useState(0);
+  return <Provider value={[count, setCount]}>{props.children}</Provider>;
+};
+```
+
+`Parent.js`
+```
+import React, { useState } from "react";
+import Button from "./Child1";
+import Label from "./Label";
+import { AppProvider } from "./Context";
+
+const Parent = (props) => {
+  const [b1Count, setB1Count] = useState(0);
+  const onB1Click = () => {
+    setB1Count(b1Count + 1);
+  };
+
+  return (
+    <AppProvider>
+      <h3>Parent</h3>
+      <Button onclick={onB1Click}>B1</Button> <br />
+      <Label value={b1Count}></Label>
+    </AppProvider>
+  );
+};
+
+export default Parent;
+```
+`Button.js`
+```
+import React, { Fragment, useContext } from "react";
+import { AppContext } from "./Context";
+
+const Button = (props) => {
+  const [count, setCount] = useContext(AppContext);
+  const onButtonClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <Fragment>
+      <button className="" onClick={onButtonClick}>
+        {props.children}
+      </button>
+    </Fragment>
+  );
+};
+
+export default Button;
+
+```
+
+`Label.js`
+```
+import React, { Fragment, useContext } from "react";
+import { AppContext } from "./Context";
+
+const Label = (props) => {
+  const [count, setCount] = useContext(AppContext);
+
+  return (
+    <Fragment>
+      <label>Count: {count}</label>
+    </Fragment>
+  );
+};
+
+export default Label;
+```
 ### What id render prop
 passsing component as function
 
