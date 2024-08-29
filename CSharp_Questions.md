@@ -103,8 +103,8 @@ On Cloud side:
 - Lists provide additional methods and properties that make working with collections easier, such as Count, Sort, Find, ForEach, etc.
 - Arrays have fewer built-in methods and require more manual coding for common operations.
 ##### 4 Maturity Levels of REST API Design
-Level 0 - The Swamp of POX (Plain Old XML) - Url should not have underscore instead use - one url
-Level 1 - Resources - different urls to interact with different resources
-Level 2 - HTTP Verbs - Get, Post, Put, Patch, Delete - Headers - Query Parameters - Status Codes
-Level 3 - Hypermedia Controls - Content Negotiation (Accept, Content-Type) - HATEOAS (Add ralated links in response for explorable) - Versioning
+- Level 0 - The Swamp of POX (Plain Old XML) - Url should not have underscore instead use - one url
+- Level 1 - Resources - different urls to interact with different resources
+- Level 2 - HTTP Verbs - Get, Post, Put, Patch, Delete - Headers - Query Parameters - Status Codes
+- Level 3 - Hypermedia Controls - Content Negotiation (Accept, Content-Type) - HATEOAS (Add ralated links in response for explorable) - Versioning
 
