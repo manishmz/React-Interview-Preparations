@@ -48,15 +48,63 @@ It is a layered approach that aims to separate concerns and dependencies within 
 - UI components: Reusable UI elements like navigation menus, product listings, or shopping cart widgets.
 
 ##### Object class - functions
-delegates type
-angualr pacakges
-Restrict api request of different region
-Difference between List and Array
+Object is the base class for all other classes
+Here are some commonly used functions and methods provided by the Object class in C#:
+1. ToString():
+The ToString() method returns a string representation of the object. By default, it returns the fully qualified name of the class.
+2. Equals(object obj):
+The Equals() method compares the current object with the specified object for equality. By default, it checks if the two objects refer to the same memory location. However, this method is often overridden in derived classes to provide custom equality comparisons based on specific attributes or properties.
+3. GetHashCode():
+The GetHashCode() method returns a hash code value for the object. The hash code is typically used in data structures like hash tables to efficiently store and retrieve objects.
+4. GetType():
+The GetType() method returns the Type object that represents the runtime type of the current instance. It can be used to obtain information about the class, such as its name, base class, implemented interfaces, etc.
+5. MemberwiseClone():
+The MemberwiseClone() method creates a shallow copy of the current object. It copies the values of all fields from the original object to the new object. If a deep copy is required, a custom cloning mechanism should be implemented.
+6. Finalize():
+The Finalize() method is called by the garbage collector before an object is reclaimed. It can be overridden to perform any necessary cleanup or resource release operations.
+##### delegates type
+It allows you to treat methods as first-class objects, which means you can pass methods as parameters, store them in variables, and invoke them dynamically
+Delegates are often used to implement event handling, callbacks, and asynchronous programming.
+##### angualr pacakges
+##### Restrict api request of different region
+1. IP-based Filtering:
+- Obtain the IP address of the incoming request using
+HttpContext.Connection.RemoteIpAddress
+in ASP.NET Core or
+HttpContext.Current.Request.UserHostAddress
+in ASP.NET.
+- Create a whitelist or blacklist of IP ranges or specific IP addresses for the allowed or restricted regions.
+- Compare the incoming IP address with the whitelist or blacklist to determine whether to allow or deny the request.
+- If the IP address is not within the allowed range, return an appropriate HTTP response (e.g., 403 Forbidden) to restrict access.
+2. Geolocation Service:
+- Use a geolocation service or API (such as MaxMind GeoIP2 or IP2Location) to determine the country or region of the incoming request based on its IP address.
+- Create a whitelist or blacklist of allowed or restricted countries or regions.
+- Retrieve the geolocation information for the incoming request's IP address using the geolocation service.
+- Check if the country or region of the request is within the allowed list. If not, return an appropriate HTTP response to restrict access.
 
-4 Maturity Levels of REST API Design
+On Cloud side:
+1. Virtual Network (VNet) Peering
+2. Network Security Groups (NSGs)
 
-0- The Swamp of POX - Url should not have underscore instead use - one url
-1- Resources - different usrl to interact with different resources
-2 - Methods - Get, Post, Put, Patch, Delete - Headers - Query Parameters - Status Codes
-3 - Hypermedia Controls - Content Negotiation (Accept, Content-Type) - HATEOAS (Add ralated links in response for explorable) - Versioning
+##### Difference between List and Array
+1. Size flexibility:
+- Arrays have a fixed size that is determined at the time of declaration and cannot be changed later. You need to specify the size explicitly.
+- Lists, on the other hand, have a dynamic size and can grow or shrink as needed. They automatically resize themselves when elements are added or removed.
+2. Memory allocation:
+- Arrays allocate a contiguous block of memory to store elements. The memory is allocated in a single chunk, which can be more efficient in terms of memory usage.
+- Lists internally use an array but provide a wrapper around it. When the list needs to grow beyond its current capacity, a new larger array is created, and the elements from the old array are copied to the new one. This resizing process incurs some overhead.
+3. Flexibility in adding/removing elements:
+- Arrays have a fixed size, so adding or removing elements requires creating a new array with the desired size and copying the existing elements. This can be inefficient if you frequently need to modify the collection's size.
+- Lists provide methods like Add(), Remove(), and Insert() that allow you to easily add, remove, or insert elements at any position without worrying about resizing or shifting elements manually.
+4. Performance:
+- Arrays generally have better performance for random access and indexing since they provide direct access to elements using an index.
+- Lists, being a wrapper around an array, also support indexing but may have slightly slower performance due to the additional layer of abstraction.
+5. Additional functionality:
+- Lists provide additional methods and properties that make working with collections easier, such as Count, Sort, Find, ForEach, etc.
+- Arrays have fewer built-in methods and require more manual coding for common operations.
+##### 4 Maturity Levels of REST API Design
+Level 0 - The Swamp of POX (Plain Old XML) - Url should not have underscore instead use - one url
+Level 1 - Resources - different urls to interact with different resources
+Level 2 - HTTP Verbs - Get, Post, Put, Patch, Delete - Headers - Query Parameters - Status Codes
+Level 3 - Hypermedia Controls - Content Negotiation (Accept, Content-Type) - HATEOAS (Add ralated links in response for explorable) - Versioning
 
