@@ -108,3 +108,17 @@ On Cloud side:
 - Level 2 - HTTP Verbs - Get, Post, Put, Patch, Delete - Headers - Query Parameters - Status Codes
 - Level 3 - Hypermedia Controls - Content Negotiation (Accept, Content-Type) - HATEOAS (Add ralated links in response for explorable) - Versioning
 
+##### Extensions method - WhereNot in linq
+    public static IEnumerable<T> WhereNot<T>(this IEnumerable<T> list, Func<T, bool> func1)
+    {
+        return list.Where( x => !func1(x));
+    }
+
+    public static IEnumerable<T> Where(this IEnumerable<T> list, Func<T, bool> func1)
+    {
+        foreach (var ele in list)
+        {
+            if (func1(ele))
+                yield return ele;
+        }
+    }
