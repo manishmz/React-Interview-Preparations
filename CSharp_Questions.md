@@ -109,6 +109,7 @@ On Cloud side:
 - Level 3 - Hypermedia Controls - Content Negotiation (Accept, Content-Type) - HATEOAS (Add ralated links in response for explorable) - Versioning
 
 ##### Extensions method - WhereNot in linq
+```cs
     public static IEnumerable<T> WhereNot<T>(this IEnumerable<T> list, Func<T, bool> func1)
     {
         return list.Where( x => !func1(x));
@@ -122,3 +123,31 @@ On Cloud side:
                 yield return ele;
         }
     }
+```
+
+##### Static Constructor
+A static constructor is used to initialize any static data, or to perform a particular action that needs performed once only. It is called automatically before the first instance is created or any static members are referenced.
+
+Static constructors have the following properties:
+
+- A static constructor does not take access modifiers or have parameters.
+- A static constructor is called automatically to initialize the class before the first instance is created or any static members are referenced.
+- A static constructor cannot be called directly.
+- The user has no control on when the static constructor is executed in the program.
+- A typical use of static constructors is when the class is using a log file and the constructor is used to write entries to this file.
+  ```cs
+    public class Logger
+    {
+        private static StreamWriter logFile;
+        static Logger()
+        {
+            logFile = new StreamWriter("log.txt");
+        }
+    
+        public static void Log(string message)
+        {
+            logFile.WriteLine(message);
+            logFile.Flush();
+        }
+    }
+  ```
