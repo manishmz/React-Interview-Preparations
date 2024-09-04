@@ -151,3 +151,9 @@ Static constructors have the following properties:
         }
     }
   ```
+##### Type of constructor
+- Default Constructor
+- Parameterized Constructor
+- Copy Constructor
+- Static Constructor
+- Private Constructor 
