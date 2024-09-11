@@ -24,6 +24,7 @@ Advantage
 - PATCH is used for partial updates to existing resources.
 - PUT is used for complete replacements or updates to existing resources.
 ##### middlewares
+Function which handle http request or http response
 ##### event emitter - angular
 
 ##### ci/cd, jenkins, lamda
@@ -62,9 +63,16 @@ The GetType() method returns the Type object that represents the runtime type of
 The MemberwiseClone() method creates a shallow copy of the current object. It copies the values of all fields from the original object to the new object. If a deep copy is required, a custom cloning mechanism should be implemented.
 6. Finalize():
 The Finalize() method is called by the garbage collector before an object is reclaimed. It can be overridden to perform any necessary cleanup or resource release operations.
-##### delegates type
+##### Delegate and it types
 It allows you to treat methods as first-class objects, which means you can pass methods as parameters, store them in variables, and invoke them dynamically
 Delegates are often used to implement event handling, callbacks, and asynchronous programming.
+Types of Delegates:
+- Single cast
+- Multicast
+- Generic Delegates
+  - Func<para1, para2, returntype> or Func<T, TResult>
+  - Action<T> : return type is void
+  - Predicate<T> : return type is true or false
 ##### angualr pacakges
 ##### Restrict api request of different region
 1. IP-based Filtering:
@@ -157,3 +165,20 @@ Static constructors have the following properties:
 - Copy Constructor
 - Static Constructor
 - Private Constructor 
+
+#### .Net Core
+Open source, cross platform (independent of OS), a improved version of .net framework contains richer functionlaity.
+##### .Net core and .Net framework difference
+- Using core can't create Desktop application, supports web, mobile developement
+- .Net framework needs .Net framework to be installed on windows
+- .Net framework doesn't support dependecy injection
+- .Net core only supports Rest api service
+- .Net core has good performance and scalability
+- .Net core supports microserve architecture
+##### Routing
+- Mechanism to map request url to controller and action method
+  Two types of Routing
+  - Conventional Routing : We give pattern to match with url- using MapControllerRoute or MapDefaultControllerRoute middleware
+  - Attribute Routing : [Route("")] attribute is used to define the routing. Used MapControllers middleare in program.cs
+  - We can use both conventional and attribute routing in same application. If attribute route ([Route]) is not present then conventional routing will use
+  - MapGet, MapPost, MapPut, MapDeleted are methods for Routing
