@@ -213,3 +213,4 @@ public void ConfigureServices(IServiceCollection services)
   // Other service configurations
 }
 ```
+Create a new `ApplicationDbContext` class that inherits from `IdentityDbContext`
