@@ -186,7 +186,7 @@ Open source, cross platform (independent of OS), a improved version of .net fram
 Singleton, Scoped, and Transient are different lifetimes or scopes used in dependency injection (DI) frameworks. They determine how instances of dependencies are created and managed within an application.
 1. Singleton: In the Singleton lifetime, only one instance of a dependency is created and shared throughout the entire application.
 2. Scoped: In the Scoped lifetime, a new instance of a dependency is created for each scope or request.
-3. Transient: In the Transient lifetime, a new instance of a dependency is created every time it is requested.\
+3. Transient: In the Transient lifetime, a new instance of a dependency is created every time it is requested.
 ##### Handle Global Exception
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -195,5 +195,21 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     app.UseDeveloperExceptionPage(); // will show exception page with stack trace
   else
     app.UseExceptionHandler("/error"); // For production, call custom api "/error"
+}
+```
+##### Logging
+Logging log data into console if project runs through console, log into output window of visual studio, also log into file using logging framework Nlog and Serilog.
+##### Identity
+Identity is a membership system that provides authentication and authorization functionalities for web applications. It simplifies the process of managing user accounts, roles, and permissions.
+Identity allows you to easily add user registration, login, and password management features to your application. It also provides features like account confirmation, password reset, two-factor authentication, and external authentication providers (e.g., Microsoft, Google, Facebook).
+- Package: Microsoft.AspNetCore.Identity
+```cs
+public void ConfigureServices(IServiceCollection services)
+{
+  // Other service configurations
+  services.AddDbContext(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+  services.AddDefaultIdentity(options => options.SignIn.RequireConfirmedAccount = true)
+  .AddEntityFrameworkStores();
+  // Other service configurations
 }
 ```
