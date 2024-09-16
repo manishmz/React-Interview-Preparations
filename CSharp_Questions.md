@@ -214,3 +214,44 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 Create a new `ApplicationDbContext` class that inherits from `IdentityDbContext`
+#### Microservice
+A microservice is an architectural style that structures an application as a collection of small, loosely coupled, and independently deployable services. Each service focuses on a specific business capability and communicates with other services through well-defined APIs.
+1. Scalability: Microservices allow individual services to be scaled independently based on their specific needs. This enables better resource utilization and the ability to handle varying levels of load efficiently.
+2. Flexibility and Agility: Microservices promote flexibility and agility in development. Since each service is independent, teams can work on different services simultaneously, using different technologies and programming languages. This allows for faster development, deployment, and updates without impacting the entire application.
+3. Fault Isolation: In a monolithic application, a single bug or failure can bring down the entire system. With microservices, failures are isolated to individual services, reducing the impact on the overall application. It also makes it easier to identify and fix issues since services are smaller and more focused.
+4. Independent Deployment: Microservices can be deployed independently, allowing for continuous delivery and deployment. This means that updates or bug fixes can be rolled out to specific services without affecting the entire application. It also enables A/B testing and gradual feature rollout.
+5. Technology Diversity: Microservices allow for the use of different technologies and frameworks within the same application. Each service can choose the most appropriate technology stack for its specific requirements. This flexibility enables teams to leverage the best tools and technologies for each service.
+6. Team Autonomy: Microservices enable teams to work independently on different services. Each team can have ownership and autonomy over their respective services, making it easier to manage and scale development efforts. This also promotes faster decision-making and reduces dependencies between teams.
+7. Resilience and Fault Tolerance: Microservices architecture promotes resilience by isolating failures and providing fault tolerance. If one service fails, it does not bring down the entire application. Services can be designed to handle failures gracefully and recover quickly.
+8. Improved Maintainability: With smaller and more focused services, it becomes easier to understand, test, and maintain the codebase. Changes or updates to a specific service have minimal impact on other services, reducing the risk of introducing bugs or breaking functionality.
+
+- Cons: While microservices architecture offers several advantages, it also has some potential drawbacks that need to be considered:
+1. Increased Complexity: Microservices introduce additional complexity compared to monolithic architectures. Managing a distributed system with multiple services requires careful coordination and monitoring. The complexity of inter-service communication, data consistency, and deployment can be challenging to handle.
+2. Operational Overhead: With multiple services, there is an increased operational overhead. Each service needs to be deployed, monitored, and managed independently. This can require additional infrastructure, tools, and expertise to ensure the smooth operation of the entire system.
+3. Distributed System Challenges: Microservices rely on network communication between services. This introduces challenges such as latency, network failures, and service discovery. Ensuring reliable communication and handling failures gracefully can be complex.
+4. Data Consistency: Maintaining data consistency across multiple services can be challenging. As each service has its own database, ensuring data integrity and synchronization becomes more complex. Implementing distributed transactions or eventual consistency patterns may be necessary.
+5. Service Dependencies: Microservices often have dependencies on other services. Changes in one service may require corresponding changes in dependent services. Managing these dependencies and coordinating updates can be challenging, especially in large-scale systems.
+6. Testing and Debugging: Testing and debugging in a microservices environment can be more complex. With multiple services interacting, it becomes important to test the integration between services, handle different service versions, and simulate various failure scenarios.
+7. Development and Deployment Complexity: Developing and deploying microservices requires additional tooling and infrastructure. Continuous integration and deployment pipelines need to be set up for each service, which can increase development and maintenance efforts.
+8. Performance Overhead: Microservices introduce additional network communication, which can impact performance compared to a monolithic architecture. The overhead of inter-service communication and potential latency can affect response times and overall system performance.
+9. Learning Curve: Adopting microservices requires a shift in mindset and new skills for developers and operations teams. Understanding the principles, best practices, and tools associated with microservices architecture may require a learning curve and additional training.
+##### Sync and Async communications
+1. Sync Communication: example rest api, will wait for response
+2. Async Communication: example message queue, apache kafka
+  There are two types of messaged base communication
+  - Point to Point: it has one producer which produces the message and the only one reciever consumes it, after consumed the message deleted automatically. ex. message queue, Rabbit MQ, AWS SQS
+  - Publisher and Subscriber: it has one publisher which publishes the message and send it to the topic and have multiple subscribers which consume the message. ex. Kafka, AWS SNS
+In message base communication, producer and consumer must know the message structure/format of the communication.
+Event Based Async communication, the consumer don't need to know about the details of the message.
+##### SAGA Design Pattern
+The SAGA design pattern is a way to manage distributed transactions in a microservices architecture. It helps maintain data consistency across multiple services by coordinating a series of local transactions.
+Problem Trying to resolve
+- Lets say we are ordering food from zomato/swiggy: Choose your food > Add to cart and checkout > Make payment > order gets delivered > Mark order as completed
+- In monolythic if any one of the operation failed we can rollback easily due to same transaction
+- But in microservice we have different services with different database, if lets say coukdn't able to deliver the order due to unavailability of delivery guys. In this case rollback from all microservice its difficult.
+- We use SAGA in this case. 
+The SAGA pattern addresses this by breaking down a long-running transaction into a series of smaller, local transactions. Each local transaction represents a step in the overall business transaction. If any step fails, compensating actions are performed to undo the changes made by previous steps. So we reverted all the changes. In distributed rollback is not possible so we kind of undo the changes.
+![image](https://github.com/user-attachments/assets/0f4c7b8c-ee73-42d1-b8ed-32b9a93fb46e)
+There are two types of SAGA implementation
+1. Choreography: communicate with other service using single common message broker. Advantages: Easy to implement, doesn't introduce a single point of failure. Disadvantage: backtracting is very difficult, who calls whom, risk of cyclic dependency.
+2. Orchestrator: It handles all the trasaction and tells participant which operation to perform based on the event. Disadvatges: single point of failure, design complexity
