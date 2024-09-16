@@ -182,3 +182,18 @@ Open source, cross platform (independent of OS), a improved version of .net fram
   - Attribute Routing : [Route("")] attribute is used to define the routing. Used MapControllers middleare in program.cs
   - We can use both conventional and attribute routing in same application. If attribute route ([Route]) is not present then conventional routing will use
   - MapGet, MapPost, MapPut, MapDeleted are methods for Routing
+##### Dependency Injection scopes/lifetimes
+Singleton, Scoped, and Transient are different lifetimes or scopes used in dependency injection (DI) frameworks. They determine how instances of dependencies are created and managed within an application.
+1. Singleton: In the Singleton lifetime, only one instance of a dependency is created and shared throughout the entire application.
+2. Scoped: In the Scoped lifetime, a new instance of a dependency is created for each scope or request.
+3. Transient: In the Transient lifetime, a new instance of a dependency is created every time it is requested.\
+##### Handle Global Exception
+```cs
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+  if (env.IsDevelopment())
+    app.UseDeveloperExceptionPage(); // will show exception page with stack trace
+  else
+    app.UseExceptionHandler("/error"); // For production, call custom api "/error"
+}
+```
