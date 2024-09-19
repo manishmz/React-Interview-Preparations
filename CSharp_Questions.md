@@ -255,3 +255,29 @@ The SAGA pattern addresses this by breaking down a long-running transaction into
 There are two types of SAGA implementation
 1. Choreography: communicate with other service using single common message broker. Advantages: Easy to implement, doesn't introduce a single point of failure. Disadvantage: backtracting is very difficult, who calls whom, risk of cyclic dependency.
 2. Orchestrator: It handles all the trasaction and tells participant which operation to perform based on the event. Disadvatges: single point of failure, design complexity
+##### CQRS Design Pattern
+CQRS (Command Query Responsibility Segregation) is a design pattern commonly used in microservice architectures. It separates the responsibilities of handling commands (write operations) and queries (read operations) into separate components.
+CQRS architecture provides a solution by separating the responsibilities of write and read operations, enabling scalability, performance optimization, and flexibility in complex applications like e-commerce systems.
+##### How to handle data consistency in microservice architecture
+- Sychronous communication
+- Asynchronous communication
+- CQRS
+- Event sourcing : Serires of events like order is placed then add order, which triggers payment event. and if payament failed it triggers rollback of order
+- Distributed transaction / 2 pahse commit - uses synchronous communication
+- SAGA Pattern - uses asynchronous communication
+##### 2 phase commit (2PC)
+In microservice architectures, distributed transactions can be implemented using the Two-Phase Commit (2PC) protocol. The 2PC protocol is a coordination mechanism that ensures atomicity and consistency across multiple services involved in a distributed transaction.
+Here's how the 2PC protocol works:
+
+1. Coordinator: There is a coordinator service that initiates and manages the distributed transaction. It acts as the central authority responsible for coordinating the participating services.
+2. Participants: Each participating service involved in the transaction is called a participant. These participants can be individual microservices or databases.
+3. Phase 1 - Prepare: The coordinator sends a prepare request to all participants, asking them to prepare for the transaction. Each participant checks if it can successfully execute the transaction and replies with either a vote to commit or a vote to abort.
+4. Phase 2 - Commit or Abort: Based on the responses received in the prepare phase, the coordinator decides whether to commit or abort the transaction. If all participants voted to commit, the coordinator sends a commit request to all participants. If any participant voted to abort or if there was a failure during the prepare phase, the coordinator sends an abort request to all participants.
+##### Difference between 2 PC and SAGA
+2 Phase Commit | SAGA Pattern
+--- | ---
+Strong consistency | Eventual consistency
+Synchronous | Asynchronous
+Blocking | Non Blocking
+Complexity | Simplicity
+Performance overhead | Better performance
