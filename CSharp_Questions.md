@@ -281,3 +281,8 @@ Synchronous | Asynchronous
 Blocking | Non Blocking
 Complexity | Simplicity
 Performance overhead | Better performance
+##### Reverse Proxy
+A reverse proxy is a server or service that sits between client devices and web servers. It acts as an intermediary, receiving requests from clients and forwarding them to the appropriate backend servers. The response from the backend server is then sent back to the client through the reverse proxy.
+The main purpose of a reverse proxy is to distribute incoming client requests across multiple backend servers, improving performance, scalability, and reliability. It can also provide additional functionality such as load balancing, caching, SSL termination, and security features like authentication and authorization.
+Reverse proxies are commonly used in web applications, especially in scenarios where there is a need for high availability, fault tolerance, and efficient handling of client requests. They can be implemented as hardware appliances, software applications, or even as part of a web server software. Some popular reverse proxy solutions include Nginx, Apache HTTP Server with mod_proxy, and HAProxy.
+
