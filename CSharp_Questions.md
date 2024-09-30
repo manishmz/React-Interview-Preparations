@@ -299,3 +299,31 @@ In distributed tracing, a unique identifier, called a trace ID, is assigned to e
 By collecting and analyzing these traces, you can gain insights into the overall performance and behavior of your microservices. Distributed tracing helps you identify latency issues, understand dependencies between services, detect errors, and optimize the performance of your system.
 To implement distributed tracing, you typically need a distributed tracing system or tool that can collect and aggregate trace data from different services. Popular distributed tracing systems include Jaeger, Zipkin, and OpenTelemetry. These systems provide libraries or agents that you can integrate into your microservices to automatically generate and propagate trace information.
 
+#### SQL Database
+##### ACID Properties
+ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. These properties are fundamental principles in database systems, including SQL databases, to ensure reliable and transactional operations. Let's explore each property:
+1. Atomicity: Atomicity guarantees that a transaction is treated as a single, indivisible unit of work. It means that either all the changes made within a transaction are committed, or none of them are. If any part of the transaction fails, the entire transaction is rolled back, and the database returns to its previous state.
+2. Consistency: Consistency ensures that a transaction brings the database from one valid state to another. It enforces integrity constraints, such as data type validation, referential integrity, and other rules defined in the database schema. In other words, the database remains in a consistent state before and after the execution of a transaction.
+3. Isolation: Isolation ensures that concurrent transactions do not interfere with each other. Each transaction should execute as if it is the only transaction running on the system. Isolation prevents issues like dirty reads (reading uncommitted data), non-repeatable reads (reading different values in the same transaction), and phantom reads (seeing new rows inserted by other transactions).
+4. Durability: Durability guarantees that once a transaction is committed, its changes are permanent and will survive any subsequent failures, such as power outages or system crashes. The committed data is stored in non-volatile memory (usually disk storage) and can be recovered even in the event of a system failure.
+
+#### Scenario based questions
+##### In web apis if we want to allow requests from only particular region, how we can achieve it
+1. IP-Based Filtering:
+- Obtain the IP address of incoming requests.
+- Determine the region associated with each IP address. You can use a geolocation database or an IP-to-location mapping service to map IP addresses to regions.
+- Maintain a whitelist or blacklist of IP addresses or regions that are allowed or denied access to your API.
+- Before processing each request, check if the IP address or region of the request is allowed or denied based on your whitelist or blacklist.
+- If the IP address or region is allowed, proceed with processing the request. Otherwise, return an appropriate error response or deny access.
+2. Geolocation-Based Filtering:
+- Extract the geolocation information from incoming requests. This information can be obtained from the user's browser or through other means such as headers or cookies.
+- Determine the region associated with the geolocation information.
+- Maintain a whitelist or blacklist of regions that are allowed or denied access to your API.
+- Before processing each request, check if the region of the request is allowed or denied based on your whitelist or blacklist.
+- If the region is allowed, proceed with processing the request. Otherwise, return an appropriate error response or deny access.
+It's important to note that IP-based or geolocation-based filtering may not be foolproof as IP addresses can be spoofed or VPNs can be used to bypass these filters. Therefore, it's recommended to combine these filtering techniques with other security measures such as authentication and rate limiting to enhance the security of your web API.
+##### Website is slow investigate the root cause and provide solution
+1. on browser side - issues website is loading slow at start. Solution: use cdn for images and files, use lazy load for some pages
+2. on server side - some apis are slow while retrieivng data or performing any operation. Solutions: use optimize code, redis cache, pagination, async (user don't need to wait for response). architecture solution is to use distrirbuted servers, if computation takes times try to do precomputation.
+3. on database side - some queries are slow. Solutions: Optimize the query by removing unnecessary joins, fetch require columns and data, apply indexes on search column (single or multiple column), if database contains data not quering on it then archieve the data in another database, architecture solution is to use horizontal sharding
+
