@@ -326,4 +326,5 @@ It's important to note that IP-based or geolocation-based filtering may not be f
 1. on browser side - issues website is loading slow at start. Solution: use cdn for images and files, use lazy load for some pages
 2. on server side - some apis are slow while retrieivng data or performing any operation. Solutions: use optimize code, redis cache, pagination, async (user don't need to wait for response). architecture solution is to use distrirbuted servers, if computation takes times try to do precomputation.
 3. on database side - some queries are slow. Solutions: Optimize the query by removing unnecessary joins, fetch require columns and data, apply indexes on search column (single or multiple column), if database contains data not quering on it then archieve the data in another database, architecture solution is to use horizontal sharding
-
+##### Event Driven
+##### Kafka queue
