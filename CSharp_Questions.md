@@ -328,3 +328,33 @@ It's important to note that IP-based or geolocation-based filtering may not be f
 3. on database side - some queries are slow. Solutions: Optimize the query by removing unnecessary joins, fetch require columns and data, apply indexes on search column (single or multiple column), if database contains data not quering on it then archieve the data in another database, architecture solution is to use horizontal sharding
 ##### Event Driven
 ##### Kafka queue
+Producers, Brokers, Topics, Partitions, Consumers
+ack = 0, ack = 1, ack = all
+
+#### SQL
+##### Different types of keys
+In SQL databases, there are several types of keys that can be used to establish relationships between tables and ensure data integrity. Here are some commonly used key types:
+1. Primary Key: A primary key is a unique identifier for each record in a table. It ensures that each row in the table is uniquely identified and helps in maintaining data integrity.
+2. Foreign Key: A foreign key is a field in one table that refers to the primary key in another table. It establishes a relationship between two tables and enforces referential integrity.
+3. Unique Key: A unique key ensures that the values in a column or a set of columns are unique across all rows in a table. Unlike a primary key, a unique key can contain null values.
+4. Composite Key: A composite key is a combination of two or more columns that uniquely identifies a record in a table. It is used when a single column cannot uniquely identify a record.
+5. Candidate Key: A candidate key is a column or a set of columns that can be chosen as a primary key. It satisfies the uniqueness and non-nullability requirements of a primary key. A candidate key is any column or set of columns that can potentially serve as a primary key, while a primary key is the specific candidate key that is chosen to uniquely identify records in a table.
+6. Alternate Key: An alternate key is a candidate key that is not chosen as the primary key. It can be used as a unique identifier for a record.
+#### Difference between Temp table and Temp variable
+In SQL, temporary tables and table variables are used to store temporary data within a session or a specific scope. They are similar in concept but have some differences in terms of their usage and behavior.
+1. Temporary Table:
+   - A temporary table is a table that is created and exists only for the duration of a session or a specific transaction.
+   - It is stored in the tempdb database and can be accessed by multiple users or sessions.
+   - Temporary tables can be created using the CREATE TABLE statement and can have indexes, constraints, and other table properties.
+   - They can be used to store intermediate results, perform complex calculations, or temporarily store data for further processing.
+   - Temporary tables are automatically dropped when the session or transaction ends, or they can be explicitly dropped using the DROP TABLE statement.
+2. Table Variable:
+   - A table variable is a variable that can hold a result set or a table-like structure within a specific scope, such as a stored procedure or a batch of statements.
+   - It is declared using the DECLARE statement, followed by the table structure definition.
+   - Table variables are stored in memory and have a limited scope within the batch or procedure where they are declared.
+   - They do not support indexes or constraints, and their structure cannot be altered once declared.
+   - Table variables are useful for storing small to medium-sized result sets or intermediate data within a specific scope without the need for physical disk storage.
+   - They are automatically deallocated when the scope ends.
+
+In summary, temporary tables are physical tables that exist for the duration of a session or transaction, while table variables are variables that hold table-like structures within a specific scope. Temporary tables offer more flexibility and functionality, while table variables are lightweight and suitable for smaller data sets. The choice between them depends on the specific requirements and use case.
+ 
