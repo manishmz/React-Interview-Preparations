@@ -357,4 +357,82 @@ In SQL, temporary tables and table variables are used to store temporary data wi
    - They are automatically deallocated when the scope ends.
 
 In summary, temporary tables are physical tables that exist for the duration of a session or transaction, while table variables are variables that hold table-like structures within a specific scope. Temporary tables offer more flexibility and functionality, while table variables are lightweight and suitable for smaller data sets. The choice between them depends on the specific requirements and use case.
- 
+##### Difference between function and stored procedure
+In SQL, both functions and stored procedures are database objects that can be used to encapsulate and execute a set of SQL statements. However, there are some key differences between them:
+1. Purpose:
+- Function: A function is designed to return a single value or a table variable as a result. It is typically used to perform calculations, transformations, or data manipulations and can be used in SQL queries as part of expressions or in SELECT statements.
+- Stored Procedure: A stored procedure is used to group a set of SQL statements together to perform a specific task or operation. It can contain input and output parameters and can be used to modify data, retrieve data, or perform complex business logic.
+2. Return Value:
+- Function: A function must return a value or a table variable. It can be used in expressions or assigned to variables.
+- Stored Procedure: A stored procedure does not have to return a value. It can modify data, perform operations, or generate output using output parameters or result sets.
+3. Usage:
+- Function: Functions are commonly used in SQL queries, such as in SELECT, WHERE, or JOIN clauses, to perform calculations or transformations on data.
+- Stored Procedure: Stored procedures are often used to encapsulate complex business logic, perform data modifications, or execute a series of steps as a single unit of work.
+4. Transaction Control:
+- Function: Functions cannot modify data directly or perform transaction control statements like COMMIT or ROLLBACK. They are read-only and deterministic.
+- Stored Procedure: Stored procedures can modify data, perform transaction control, and execute multiple SQL statements within a single transaction.
+5. Execution:
+- Function: Functions are called as part of an SQL statement or expression, and their results are immediately available.
+- Stored Procedure: Stored procedures are executed using the EXECUTE or EXEC statement, and they can have input and output parameters.
+In summary, functions are primarily used to return values or table variables and are often used in SQL queries, while stored procedures are used to group SQL statements together to perform specific tasks or operations and can modify data and perform complex business logic. The choice between them depends on the specific requirements and use case.
+```sql
+CREATE FUNCTION CalculateDiscount(@price DECIMAL(10,2), @discountRate DECIMAL(4,2))
+RETURNS DECIMAL(10,2)
+AS
+BEGIN
+  DECLARE @discountedPrice DECIMAL(10,2)
+  SET @discountedPrice = @price - (@price * @discountRate)
+  RETURN @discountedPrice
+END
+```
+```sql
+CREATE PROCEDURE GetRecordsByCategory
+@category VARCHAR(50)
+AS
+BEGIN
+  SELECT * FROM YourTable WHERE Category = @category;
+END
+```
+##### TSQL query to get nth highest salary
+using CTE (Common Table Expression)
+```sql
+with table1 (name, salary) as (	Select top(nth) name, salary from employee order by salary desc)
+Select top 1 name from table1 order by salary;
+```
+```sql
+with table1 as (
+select name, salary, ROW_NUMBER() over (order by salary desc) as row_num from employee
+)
+select name, salary from table1 where row_num = nth
+```
+Instead row_number use dense_rank will give us the proper result if employee will have same salaries.
+##### ROW_NUMBER
+```
+ROW_NUMBER ( )   
+ OVER ( PARTITION BY col_1,col_2… ORDER BY col_3,col_4.. ASC or DESC) AS column_name
+```
+'Partion by' creates partion then row_number will gives row_numbers for every partition. 
+example 'partition by section order by roll_no asc'
+name | section | roll_number | row_number
+--- | --- | --- | ---
+Raju | A | 101 | 1
+Shyam | A | 102 | 2
+Minal | A | 103 | 3
+Pooja | A | 104 | 4
+Aarti | B | 201 | 1
+Shubham | B | 202 | 2
+Kartik | B | 203 | 3
+##### ROW_NUMBER vs RANK vs DENSE_RANK
+SALARY | ROW_NUMBER | RANK | DENSE_RANK
+--- | --- | --- | ---
+1000   | 1          | 1    | 1
+1500   | 2          | 2    | 2
+1500   | 3          | 2    | 2
+2000   | 4          | 4    | 3
+2200   | 5          | 5    | 4
+2500   | 6          | 6    | 5
+2500   | 7          | 6    | 5
+2500   | 8          | 6    | 5
+3000   | 9          | 9    | 6
+
+Syntax are same for all just need to use rank, dense_rank or row_number
