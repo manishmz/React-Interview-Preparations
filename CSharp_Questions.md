@@ -298,7 +298,10 @@ Distributed tracing is a technique used in microservices architectures to track 
 In distributed tracing, a unique identifier, called a trace ID, is assigned to each incoming request. As the request passes through various services, each service adds its own span, which represents a specific operation or action within that service. This span contains information such as the start time, end time, duration, and any relevant metadata. Spans are linked together using the trace ID, creating a trace that represents the complete journey of the request.
 By collecting and analyzing these traces, you can gain insights into the overall performance and behavior of your microservices. Distributed tracing helps you identify latency issues, understand dependencies between services, detect errors, and optimize the performance of your system.
 To implement distributed tracing, you typically need a distributed tracing system or tool that can collect and aggregate trace data from different services. Popular distributed tracing systems include Jaeger, Zipkin, and OpenTelemetry. These systems provide libraries or agents that you can integrate into your microservices to automatically generate and propagate trace information.
-
+##### How to scale microservices
+1. Horizontal scaling: Add more instances of similar service, and add loadbalancer to distribute the request
+2. Functional Decompositor: Split the service into multiple macro service based on functionality. eg: microserivce does searching + product listing + product availability then divide into three services searching, product lisiting + product availability
+3. Data Partioning: Partition service based on data. eg: scale user service based on usernames, like 1st service will have data from A-M and other will have from N-Z.
 #### SQL Database
 ##### ACID Properties
 ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. These properties are fundamental principles in database systems, including SQL databases, to ensure reliable and transactional operations. Let's explore each property:
