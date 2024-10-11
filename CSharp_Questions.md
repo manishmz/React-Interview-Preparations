@@ -302,14 +302,20 @@ To implement distributed tracing, you typically need a distributed tracing syste
 1. Horizontal scaling: Add more instances of similar service, and add loadbalancer to distribute the request
 2. Functional Decompositor: Split the service into multiple macro service based on functionality. eg: microserivce does searching + product listing + product availability then divide into three services searching, product lisiting + product availability
 3. Data Partioning: Partition service based on data. eg: scale user service based on usernames, like 1st service will have data from A-M and other will have from N-Z.
-#### SQL Database
-##### ACID Properties
-ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. These properties are fundamental principles in database systems, including SQL databases, to ensure reliable and transactional operations. Let's explore each property:
-1. Atomicity: Atomicity guarantees that a transaction is treated as a single, indivisible unit of work. It means that either all the changes made within a transaction are committed, or none of them are. If any part of the transaction fails, the entire transaction is rolled back, and the database returns to its previous state.
-2. Consistency: Consistency ensures that a transaction brings the database from one valid state to another. It enforces integrity constraints, such as data type validation, referential integrity, and other rules defined in the database schema. In other words, the database remains in a consistent state before and after the execution of a transaction.
-3. Isolation: Isolation ensures that concurrent transactions do not interfere with each other. Each transaction should execute as if it is the only transaction running on the system. Isolation prevents issues like dirty reads (reading uncommitted data), non-repeatable reads (reading different values in the same transaction), and phantom reads (seeing new rows inserted by other transactions).
-4. Durability: Durability guarantees that once a transaction is committed, its changes are permanent and will survive any subsequent failures, such as power outages or system crashes. The committed data is stored in non-volatile memory (usually disk storage) and can be recovered even in the event of a system failure.
-
+##### API Gateway
+- Lets say we have multiple services, now for client to communicate with multiple services it need to have all the endpoints to services. Instead of this we create a service called API Gateway which recieve request from client and call services as per need.
+- Lets say I want product info contains data from different different services like orders, review + rating, inventory, shipping. Now instead of fetching data seperatly from each microservice from client, we will call gateway and then gateway will fetch data from microservices sync or parallely.
+- Authentication, single place to do so for every api, no need to implement authentication in every microservices.
+- SSL certificate, use https for API Gateway and for API Gateway to microservices we can use http without ssl, so no need to implement ssl certificate in every microservice. Also from API Gateway to microservices we can use different protocol.
+- It also use load balancer
+##### Service Registry
+- Service Registry is service or database which contains all the endpoints (ipaddress and portno) to the microservices and their instances.
+- So when new instance is register, microservice will communicte to service registry which will add new endpoint.
+- Microservice pill servcie registry in intervals, if any intervals failed then service registry consider that the instance is dead and remove the entry.
+##### Circuit Breaker
+- a circuit breaker is implemented as a state machine that monitors the availability and health of a remote service or resource. It helps prevent cascading failures and provides fault tolerance by temporarily "breaking" the circuit and redirecting requests to an alternative path when the remote service is experiencing issues.
+- The circuit breaker operates based on a set of predefined thresholds and rules. When the number of failures or errors exceeds a certain threshold within a specified time window, the circuit breaker trips and enters an open state. In this state, subsequent requests to the remote service are not forwarded, and instead, a fallback mechanism is triggered. The fallback mechanism can be used to return cached data, provide default values, or invoke alternative services.
+- After a certain period of time, known as the "timeout" or "retry interval," the circuit breaker enters a half-open state. In this state, a limited number of requests are allowed to pass through to the remote service to check if it has recovered. If these requests succeed, the circuit breaker resets and returns to a closed state, allowing normal operation. However, if any of the requests fail, the circuit breaker re-enters the open state, extending the timeout period before retrying.
 #### Scenario based questions
 ##### In web apis if we want to allow requests from only particular region, how we can achieve it
 1. IP-Based Filtering:
@@ -335,6 +341,12 @@ Producers, Brokers, Topics, Partitions, Consumers
 ack = 0, ack = 1, ack = all
 
 #### SQL
+##### ACID Properties
+ACID is an acronym that stands for Atomicity, Consistency, Isolation, and Durability. These properties are fundamental principles in database systems, including SQL databases, to ensure reliable and transactional operations. Let's explore each property:
+1. Atomicity: Atomicity guarantees that a transaction is treated as a single, indivisible unit of work. It means that either all the changes made within a transaction are committed, or none of them are. If any part of the transaction fails, the entire transaction is rolled back, and the database returns to its previous state.
+2. Consistency: Consistency ensures that a transaction brings the database from one valid state to another. It enforces integrity constraints, such as data type validation, referential integrity, and other rules defined in the database schema. In other words, the database remains in a consistent state before and after the execution of a transaction.
+3. Isolation: Isolation ensures that concurrent transactions do not interfere with each other. Each transaction should execute as if it is the only transaction running on the system. Isolation prevents issues like dirty reads (reading uncommitted data), non-repeatable reads (reading different values in the same transaction), and phantom reads (seeing new rows inserted by other transactions).
+4. Durability: Durability guarantees that once a transaction is committed, its changes are permanent and will survive any subsequent failures, such as power outages or system crashes. The committed data is stored in non-volatile memory (usually disk storage) and can be recovered even in the event of a system failure.
 ##### Different types of keys
 In SQL databases, there are several types of keys that can be used to establish relationships between tables and ensure data integrity. Here are some commonly used key types:
 1. Primary Key: A primary key is a unique identifier for each record in a table. It ensures that each row in the table is uniquely identified and helps in maintaining data integrity.
