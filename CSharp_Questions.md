@@ -71,8 +71,8 @@ Types of Delegates:
 - Multicast
 - Generic Delegates
   - Func<para1, para2, returntype> or Func<T, TResult>
-  - Action<T> : return type is void
-  - Predicate<T> : return type is true or false
+  - Action<T> : return type is void, ex: Action<int, string>
+  - Predicate<T> : return type is true or false, Predicate<int, string>
 ##### angualr pacakges
 ##### Restrict api request of different region
 1. IP-based Filtering:
