@@ -461,3 +461,4 @@ Syntax are same for all just need to use rank, dense_rank or row_number
 ##### middleware and its function
 ##### Dependency injection
 ##### SOLID principles
+##### JWT token
