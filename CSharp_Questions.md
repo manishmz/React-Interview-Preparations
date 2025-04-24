@@ -451,3 +451,13 @@ SALARY | ROW_NUMBER | RANK | DENSE_RANK
 3000   | 9          | 9    | 6
 
 Syntax are same for all just need to use rank, dense_rank or row_number
+### C# .net questions
+##### new vs virtual vs override
+##### IDisposable vs Descructor VS Finalize
+##### Extension methods
+##### Linq group by
+##### Singleton
+##### Startup class
+##### middleware and its function
+##### Dependency injection
+##### SOLID principles
