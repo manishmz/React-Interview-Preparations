@@ -561,3 +561,76 @@ const cookieValue = document.cookie;
 // Delete a cookie (by setting expiration date in the past)
 document.cookie = 'key=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
 ```
+##### Startup.cs class in .net core
+- The Startup class serves as the entry point for ASP.NET Core applications, allowing you to configure the application's behavior before it begins handling requests. 
+- ConfigureServices:
+This method is responsible for registering services that the application will use. These services are reusable components that provide functionality, such as database connections, logging, or third-party APIs. Services are registered using the IServiceCollection interface, which is passed to the ConfigureServices method. 
+- Configure:
+This method defines the application's request processing pipeline, which determines how incoming HTTP requests are handled. It specifies the order in which middleware components are invoked to process requests. 
+- Hosting:
+In ASP.NET Core, the application host (e.g., IWebHost) is responsible for creating and configuring the Startup class and initializing the application. 
+- Example:
+In a typical ASP.NET Core application, you might use the ConfigureServices method to register a database context, add logging services, and configure options. In the Configure method, you would set up the request pipeline, potentially including middleware for routing, authentication, and serving static files. 
+- Modern Approach:
+In newer versions of ASP.NET Core (e.g., ASP.NET Core 8), a minimal API approach is often used, where the application's configuration and request handling are defined directly in the Program.cs file instead of the Startup.cs file. While the Startup.cs is not strictly required in these cases, it can still be used for more complex applications or when maintaining a clear separation of concerns is desired.
+```
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        CreateHostBuilder(args).Build().Run();
+    }
+
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+}
+
+public class Startup
+{
+    public Startup(IConfiguration configuration)
+    {
+        Configuration = configuration;
+    }
+
+    public IConfiguration Configuration { get; }
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+         // Register services here
+   	 services.AddControllers();
+   	 services.AddDbContext<MyDbContext>(
+		options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+	);
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+	// Configure the HTTP request pipeline here
+	if (env.IsDevelopment())
+	{
+	   app.UseDeveloperExceptionPage();
+	}
+	else
+	{
+	    app.UseExceptionHandler("/Home/Error");
+	    app.UseHsts();
+	}
+
+	app.UseHttpsRedirection();
+	app.UseStaticFiles();
+	app.UseRouting();
+	app.UseAuthentication();
+	app.UseAuthorization();
+	app.UseEndpoints(endpoints =>
+	{
+	     endpoints.MapControllerRoute(
+	     name: "default",
+	     pattern: "{controller=Home}/{action=Index}/{id?}");
+	});
+    }
+}
+```
