@@ -454,9 +454,55 @@ Syntax are same for all just need to use rank, dense_rank or row_number
 ### C# .net questions
 ##### new vs virtual vs override
 ##### IDisposable vs Descructor VS Finalize
+In C#, IDisposable, destructors, and finalizers are mechanisms used for resource management and cleanup in object-oriented programming. Here's an explanation of each:
+1. IDisposable:
+- IDisposable is an interface in C# that defines a method called Dispose() which is used to release unmanaged resources held by an object.
+- Classes that implement the IDisposable interface typically hold unmanaged resources such as file handles, database connections, or network sockets.
+- The Dispose() method should be called explicitly by the consumer of the object to release these unmanaged resources when they are no longer needed.
+- It is recommended to implement the IDisposable interface when a class holds unmanaged resources to ensure proper cleanup.
+2. Destructor:
+- In C#, a destructor is a special method defined in a class using the ~ClassName() syntax (e.g., ~MyClass()).
+- Destructors are used for releasing unmanaged resources and performing cleanup tasks when an object is garbage collected by the .NET runtime.
+- Destructors are non-deterministic, meaning you cannot predict when they will be called by the garbage collector.
+- It is not recommended to rely on destructors for resource cleanup, as they are less predictable compared to the Dispose() method.
+3. Finalize method:
+- In C#, the Finalize() method is a special method that serves as the finalizer for a class. It is automatically called by the garbage collector before an object is reclaimed.
+- The Finalize() method is used to release unmanaged resources and perform cleanup tasks similar to a destructor.
+- It is important to note that the Finalize() method should be overridden only when necessary, as it adds overhead to the garbage collection process.
+- The Finalize() method is typically used as a backup mechanism for releasing unmanaged resources if the Dispose() method was not called.
+In summary:
+- Use the IDisposable interface to implement resource cleanup for objects that hold unmanaged resources.
+- Avoid relying on destructors for resource cleanup due to their non-deterministic nature.
+- Use the Finalize() method as a backup mechanism for releasing unmanaged resources if the Dispose() method was not called.
+Proper resource management is crucial in C# to prevent memory leaks and ensure efficient use of system resources.
 ##### Extension methods
+```
+public static class Extensions
+{
+  public static void RemoveAll<TKey, TValue>(this IDictionary<TKey, TValue> @this, Func<TKey, TValue, bool> predicate) =>
+			@this.Keys
+				.ToList()
+				.Where(key => predicate(key, @this[key]))
+				.ForEach2(key => @this.Remove(key));
+}
+
+public static bool IsNullOrEmpty([NotNullWhen(false)] this string? @this) =>
+			string.IsNullOrEmpty(@this);
+```
 ##### Linq group by
+```
+  persons.Add(new Person { PersonID = 1, car = "Ferrari" }); 
+  persons.Add(new Person { PersonID = 1, car = "BMW" }); 
+  persons.Add(new Person { PersonID = 2, car = "Audi" });
+  var res = persons.GroupBy(it => it.PersonID, it => it.car).Select(g => new {PersonID = g.Key, Cars = g.ToList()});
+```
+##### First vs Single
+- First or First(x => //some condition) will return first object from list, If no element present then throws error
+- Single or Single(x => //some condiiton) will return single object from a sequence that satisfies a specified condition. If there are more than one records, it will throw exception
+- The FirstOrDefault method returns the first element from a sequence that satisfies a specified condition, or a default value if no such element is found. 
+- SingleOrDefault, if sequence contain more than one value then it will return default value.
 ##### Singleton
+
 ##### Startup class
 ##### middleware and its function
 ##### Dependency injection
