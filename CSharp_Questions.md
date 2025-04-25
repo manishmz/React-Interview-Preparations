@@ -505,6 +505,29 @@ public static bool IsNullOrEmpty([NotNullWhen(false)] this string? @this) =>
 
 ##### Startup class
 ##### middleware and its function
+```
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
+
+public class CustomMiddleware
+{
+	private readonly RequestDelegate _next;
+
+	public CustomMiddleware(RequestDelegate next)
+	{
+		_next = next;
+	}
+
+	public async Task InvokeAsync(HttpContext context)
+	{
+		// Logic before the next middleware
+		await context.Response.WriteAsync("Custom Middleware - Before\n");
+		await _next(context);
+		// Logic after the next middleware
+		await context.Response.WriteAsync("Custom Middleware - After\n");
+	}
+}
+```
 ##### Dependency injection
 - Dependency Injection (DI) is a design pattern commonly used in .NET development to achieve loose coupling between classes and manage dependencies more effectively. In DI, the dependencies of a class are provided from the outside rather than created within the class itself. This allows for better maintainability, testability, and flexibility in your codebase.
 ##### SOLID principles
