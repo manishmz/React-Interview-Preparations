@@ -506,5 +506,58 @@ public static bool IsNullOrEmpty([NotNullWhen(false)] this string? @this) =>
 ##### Startup class
 ##### middleware and its function
 ##### Dependency injection
+- Dependency Injection (DI) is a design pattern commonly used in .NET development to achieve loose coupling between classes and manage dependencies more effectively. In DI, the dependencies of a class are provided from the outside rather than created within the class itself. This allows for better maintainability, testability, and flexibility in your codebase.
 ##### SOLID principles
+The SOLID principles are a set of five design principles in object-oriented programming that aim to make software designs more maintainable, flexible, and easier to understand. Each principle focuses on a specific aspect of software design and encourages developers to write clean, modular, and extensible code.
+1. Single Responsibility Principle (SRP):
+- This principle states that a class should have only one reason to change, meaning it should have only one responsibility or job.
+- Example: A User class should be responsible for managing user data and authentication, but not for sending emails. Sending emails should be handled by a separate EmailService class.
+2. Open/Closed Principle (OCP):
+- The Open/Closed Principle states that classes should be open for extension but closed for modification. This means that you should be able to add new functionality to a class without modifying its existing code.
+- Example: Using interfaces and inheritance to extend the behavior of a class without changing its core implementation.
+3. Liskov Substitution Principle (LSP):
+- The Liskov Substitution Principle states that objects of a superclass should be replaceable with objects of its subclasses without affecting the correctness of the program.
+- Example: If you have a Rectangle class and a Square class that inherits from Rectangle, you should be able to substitute a Square object wherever a Rectangle object is expected.
+4. Interface Segregation Principle (ISP):
+- The Interface Segregation Principle suggests that clients should not be forced to depend on interfaces they do not use. It promotes creating specific interfaces for specific client needs.
+- Example: Instead of having a single large interface with many methods, break it down into smaller, more focused interfaces that are tailored to specific client requirements.
+5. Dependency Inversion Principle (DIP):
+- The Dependency Inversion Principle states that high-level modules should not depend on low-level modules. Both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions.
+- Example: Using Dependency Injection to decouple classes and inject dependencies, allowing for easier testing and flexibility in changing implementations without modifying existing code.
+##### Interface vs Abstract class
+- Interface: Defines a contract for classes to implement, specifying method signatures without implementations. Classes can implement multiple interfaces but cannot contain any implementation details.
+- Abstract Class: Provides a partial implementation with both abstract and concrete methods. Cannot be instantiated on its own but serves as a base for subclasses to inherit from and extend. Subclasses must implement abstract methods defined in the abstract class.
 ##### JWT token
+- JWT stands for JSON Web Token, which is a compact and self-contained way to securely transmit information between parties as a JSON object. It is commonly used for authentication and authorization in web applications.
+- A JWT token consists of three parts: a header, a payload, and a signature. The header typically contains the type of token and the signing algorithm i.e meta data about token, the payload contains the claims (data) ex: {userId: 123, exp: 234544, role: "admin"}, and the signature is used to verify that the sender of the JWT is who it says it is.
+- refresh token is used to get new jwt token, if previous jwt token expired.
+##### Local storage vs Session storage vs Cookie in browser
+Local Storage, Session Storage, and Cookies are all ways to store data in the browser, but they have some key differences in terms of lifespan, storage capacity, and accessibility.
+1. Local Storage:
+- Data stored in Local Storage persists even after the browser is closed and reopened.
+- The data stored in Local Storage has no expiration time unless explicitly removed.
+- Local Storage has a larger storage capacity compared to Session Storage.
+```
+localStorage.setItem('key', 'value'); // set
+const value = localStorage.getItem('key'); // get
+localStorage.removeItem('key'); // remove
+```
+2. Session Storage:
+- Data stored in Session Storage is available only for the duration of the page session (i.e., until the browser tab is closed).
+- The data stored in Session Storage is cleared when the browser tab is closed.
+- Session Storage has a smaller storage capacity compared to Local Storage.
+```
+sessionStorage.setItem('key', 'value');
+const value = sessionStorage.getItem('key');
+sessionStorage.removeItem('key');
+```
+3. Cookies:
+- Cookies are small pieces of data stored on the client-side that persist across different sessions.
+- Cookies have an expiration time that can be set when creating the cookie.
+- Cookies have a limited storage capacity compared to Local Storage and Session Storage.
+```
+document.cookie = 'key=value; expires=Sun, 31 Dec 2023 23:59:59 GMT';
+const cookieValue = document.cookie;
+// Delete a cookie (by setting expiration date in the past)
+document.cookie = 'key=; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+```
