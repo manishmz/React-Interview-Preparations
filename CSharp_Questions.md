@@ -657,3 +657,31 @@ public class Startup
     }
 }
 ```
+##### Concurrency vs Parallelism
+###### Concurrency
+- **Definition**: Concurrency is about dealing with multiple tasks at once, but not necessarily doing them simultaneously. Its a feel of parallelism, which feels like multiple task are working in parallel, instead it execute one task for sometime and switch other task, and then switch back process the first task and continuing doing this until the tasks gets complete.
+- **Goal**: Efficiently manage multiple tasks by switching between them.
+- **Analogy**: A single chef cooking multiple dishes by switching between them. (Mom cooking lunch/dinner in home)
+- **Implementation**: Often involves threads on single core, coroutines, or async/await.
+- **Use Case**: Useful when tasks are I/O-bound (e.g., reading files, network requests)
+
+###### Parallelism
+- **Definition**: Parallelism is about executing multiple tasks at the same time using multiple processors or cores.
+- **Goal**: Speed up computation by dividing work across processors.
+- **Analogy**: Multiple chefs each cooking a different dish at the same time. (Restaraunt chef cooking each dish)
+- **Implementation**: Involves multi-core CPUs, GPUs, or distributed systems.
+- **Use Case**: Ideal for CPU-bound tasks (e.g., large-scale computations, simulations).
+
+##### Asynchronous vs Threading
+###### Threading
+- What it is: Running multiple threads (lightweight processes) in parallel.
+- How it works: Each thread has its own execution path and can run simultaneously on multiple CPU cores.
+- Best for: CPU-bound tasks (e.g., heavy computations).
+- Resource usage: Threads are relatively heavy; too many can lead to high memory usage and context-switching overhead.
+- Example use case: Image processing, data crunching, simulations.
+###### Async
+- What it is: A way to write non-blocking code using a single thread.
+- How it works: Uses an state machine to keeps track of where the method should resume after each await.
+- Best for: I/O-bound tasks (e.g., file access, web requests, database calls).
+- Resource usage: Very lightweight; can handle thousands of operations with minimal threads.
+- Example use case: Web servers, downloading files, calling APIs.
