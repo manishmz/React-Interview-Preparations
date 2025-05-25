@@ -685,3 +685,22 @@ public class Startup
 - Best for: I/O-bound tasks (e.g., file access, web requests, database calls).
 - Resource usage: Very lightweight; can handle thousands of operations with minimal threads.
 - Example use case: Web servers, downloading files, calling APIs.
+
+##### IEnumerable vs IQuereable
+1. IEnumerable:
+- Represents a collection that can be enumerated using a foreach loop.
+- Suitable for in-memory collections like arrays, lists, and other IEnumerable implementations.
+- Executes queries on the client-side (in-memory) after fetching all the data from the data source.
+
+2. IQueryable:
+- Represents a query that can be executed against a specific data source (like a database) that supports IQueryable.
+- Suitable for querying databases using LINQ providers like Entity Framework, LINQ to SQL, etc.
+- Translates LINQ queries into SQL queries and executes them on the server-side, allowing for more efficient querying by leveraging the capabilities of the underlying data source.
+
+Feature | IEnumerable | IQueryable
+--- | --- | ---
+Namespace | System.Collections | System.Linq
+Data Source | In-memory collections | Remote data sources (e.g., DB)
+Query Execution | In-memory | At the data source
+Performance | Less efficient for large data sets | More efficient for large data sets
+Use Case | LINQ to Objects | LINQ to SQL/Entities
