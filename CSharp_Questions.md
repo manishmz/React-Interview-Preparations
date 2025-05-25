@@ -704,3 +704,33 @@ Data Source | In-memory collections | Remote data sources (e.g., DB)
 Query Execution | In-memory | At the data source
 Performance | Less efficient for large data sets | More efficient for large data sets
 Use Case | LINQ to Objects | LINQ to SQL/Entities
+
+##### Database connection in .Net
+1. ADO.NET:
+- ADO.NET (ActiveX Data Objects) is a core data access technology in .NET for connecting to databases.
+- You can use classes like SqlConnection, SqlCommand, SqlDataAdapter, etc., to interact with databases.
+- Example:
+```
+using System.Data.SqlClient;
+   string connectionString = "Data Source=ServerName;Initial Catalog=DatabaseName;User ID=UserName;Password=Password";
+   using (SqlConnection connection = new SqlConnection(connectionString))
+   {
+	connection.Open();
+    // Perform database operations
+    }
+```
+2. Entity Framework:
+- Entity Framework is an ORM (Object-Relational Mapping) framework that simplifies database interactions by mapping database tables to .NET objects.
+- You can use DbContext and DbSet to interact with the database using LINQ queries.
+- Example:
+```
+using Microsoft.EntityFrameworkCore;
+var options = new DbContextOptionsBuilder<MyDbContext>().UseSqlServer("connectionString").Options;
+using (var context = new MyDbContext(options)) {
+  var products = context.Products.ToList();
+  // Perform database operations
+ }
+3. Dapper:
+- Dapper is a micro ORM that provides high-performance data access by mapping query results to objects.
+- It allows you to write SQL queries and map the results to objects easily.
+
