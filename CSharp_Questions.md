@@ -705,6 +705,21 @@ Query Execution | In-memory | At the data source
 Performance | Less efficient for large data sets | More efficient for large data sets
 Use Case | LINQ to Objects | LINQ to SQL/Entities
 
+##### Threading vs Task
+In C#, both threading and tasks are used for parallel programming to execute multiple operations concurrently. However, there are some key differences between threading and tasks:
+1. Threading:
+- Threading involves creating and managing threads explicitly using the Thread class in the System.Threading namespace.
+- Threads are lower-level constructs that directly map to operating system threads.
+- With threading, you have more control over the thread's lifecycle, synchronization, and resource management.
+- Threading requires manual management of thread creation, starting, stopping, and synchronization using techniques like locks, mutexes, and semaphores.
+2. Task:
+- Tasks are a higher-level abstraction introduced in the Task Parallel Library (TPL) in .NET Framework 4.0.
+- Tasks represent asynchronous operations and provide a simpler and more efficient way to write parallel code compared to threading.
+- Tasks use a thread pool under the hood, which manages the execution of tasks on available threads from the pool.
+- Tasks support features like continuation, cancellation, exception handling, and composition, making it easier to work with asynchronous operations.
+- Tasks can be created using the Task class or the Task.Run method, which queues the task to the thread pool.
+In summary, while threading provides more control and flexibility at a lower level, tasks offer a higher-level abstraction that simplifies parallel programming and asynchronous operations. Tasks are generally preferred for most parallel programming scenarios due to their ease of use and built-in features for managing asynchronous operations.
+
 ##### Database connection in .Net
 1. ADO.NET:
 - ADO.NET (ActiveX Data Objects) is a core data access technology in .NET for connecting to databases.
@@ -733,4 +748,3 @@ using (var context = new MyDbContext(options)) {
 3. Dapper:
 - Dapper is a micro ORM that provides high-performance data access by mapping query results to objects.
 - It allows you to write SQL queries and map the results to objects easily.
-
