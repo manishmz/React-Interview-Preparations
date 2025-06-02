@@ -2,15 +2,41 @@
 
 OOPS Concepts
   Encapsulation
+  - It refers to the bundling of data (attributes) and methods (functions) that operate on the data into a single unit, known as a class. 
+    Encapsulation helps in hiding the internal state of an object and restricting access to certain parts of the object. 
+    This allows for better control over the data and prevents unintended external interference, leading to more secure and maintainable code.
   Inheritance
+  - allows a new class (derived class or subclass) to inherit attributes and methods from an existing class (base class or superclass). 
+    This promotes code reusability and establishes a hierarchical relationship between classes
   Abstraction
+  - Abstraction is the process of hiding complex implementation details and showing only the essential features of an object. 
+    It focuses on what an object does rather than how it does it. Abstraction allows developers to create simplified models that represent real-world objects more effectively.
+    Abstract classes and interfaces are used to achieve abstraction in programming languages like Java and C#.
   Polymorphism
+  - Polymorphism is the ability of objects to take on different forms or behaviors based on the context in which they are used.
+    There are two types of polymorphism: compile-time polymorphism (method overloading) and runtime polymorphism (method overriding).
 
 SOLID Principal
 
 Valuetype ReferenceType
+Key differences between value types and reference types:
+- Value types are stored directly in memory, while reference types store references to memory locations.
+- Assigning a value type variable creates a copy of the data, while assigning a reference type variable creates a reference to the same data.
+- Changes to a value type variable do not affect other variables, while changes to a reference type variable affect all variables pointing to the same object.
 
 Boxing Unboxing
+1. Boxing:
+- Boxing is the process of converting a value type (such as an integer, float, or struct) to an object reference type (System.Object) or an interface type.
+- When a value type is boxed, a new object is created on the heap to store the value, and a reference to that object is returned.
+- Boxing allows value types to be treated as objects and stored in collections that require reference types, such as ArrayList or List.
+Example of boxing in C#:
+  int number = 42;  object boxedNumber = number; // Boxing the integer value to an object reference
+2. Unboxing:
+- Unboxing is the process of converting an object reference type back to a value type.
+- When unboxing, the runtime checks if the object is compatible with the target value type and then extracts the value from the object.
+- If the object is not compatible with the target value type, an InvalidCastException is thrown at runtime.
+Example of unboxing in C#:
+  object boxedNumber = 42;<br>int number = (int)boxedNumber; // Unboxing the object reference to an integer value
 
 Recursive functions
 
