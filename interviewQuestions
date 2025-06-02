@@ -1,0 +1,301 @@
+## .Net
+
+OOPS Concepts
+  Encapsulation
+  Inheritance
+  Abstraction
+  Polymorphism
+
+SOLID Principal
+
+Valuetype ReferenceType
+
+Boxing Unboxing
+
+Recursive functions
+
+Singleton
+
+Dependency injection
+
+- Have you used any nuget package?
+- Singleton in Dependency
+
+Delegates (Action and Func and Predicate)
+
+Mutable vs immutable (string, int, object)
+
+Garbage collector
+
+ Short live
+ long live
+ longest live
+
+Garbage collector work on Managed vs unmanaged code
+
+List vs Arrays => How list does it dynamically.
+
+Thread vs Task
+  => Return types of Task > Void, Task, Task<T>, ValueTask, ValueTask<T>
+
+Context Switching
+
+Linked List
+
+Large file read solution
+20GB => 4GB
+
+Question:
+
+```csharp
+class A
+{
+ public void Method1()
+ {
+  Console.WriteLine("Class A Method 1");
+ }
+
+ public virtual void Method2()
+ {
+  Console.WriteLine("Class A Method 2");
+ }
+}
+
+class B : A
+{
+ public new void Method1()
+ {
+  Console.WriteLine("Class B Method 1");
+ }
+
+ public override void Method2()
+ {
+  Console.WriteLine("Class B Method 2");
+ }
+}
+
+class C : B
+{
+ public new void Method1()
+ {
+  Console.WriteLine("Class C Method 1");
+ }
+
+ public override void Method2()
+ {
+  Console.WriteLine("Class C Method 2");
+ }
+}
+
+A a1 = new A();
+a1.Method1();
+a1.Method2();
+
+A a2 = new B();
+a2.Method1();
+a2.Method2();
+
+A a3 = new C();
+a3.Method1();
+a3.Method2();
+
+B b1 = new B();
+b1.Method1();
+b1.Method2();
+
+B b2 = new C();
+b2.Method1();
+b2.Method2();
+
+C c1 = new C();
+c1.Method1();
+c1.Method2();
+```
+
+```
+Class A Method 1
+Class A Method 2
+
+Class A Method 1
+Class B Method 2
+
+Class A Method 1
+Class C Method 2
+
+Class B Method 1
+Class B Method 2
+
+Class B Method 1
+Class C Method 2
+
+Class C Method 1
+Class C Method 2
+```
+
+## MS SQL
+
+Primary key
+
+Secondary key / Foreign Key
+
+Transaction
+
+Store procedure optimization (sedentary sql tool)
+
+Clustered and non-clustered indexes. How do they impact query performance?
+  When to prefer less number of indexes and when to prefer more number of indexes.
+
+  Clustred => formatted
+  Non Clustored => non formmated
+
+What is a deadlock in SQL Server.
+
+Optimize a slow-running query? Query execution plan, Approach, process and tools you would use.
+
+ROW_NUMBER() VS RANK() VS DENSE_RANK()
+
+Common Table Expression (CTE)
+
+SQL injection
+
+Multiple values in single column
+
+## Frontend 3/5
+
+AngularJS
+
+ReactJS
+
+VueJS
+
+## Web API
+
+What are the first steps if service shows 500 error.
+
+How to measure performance of an API
+
+## Openstack technologies: Java/ Golang
+
+JDK Version being used
+
+## CICD
+
+ TFS
+ Gitlab
+ jenkins
+ Octopus
+
+## RESTful services
+
+Can you tell the disadvantages of RESTful web services?
+The disadvantages are:
+
+ As the services follow the idea of statelessness, it is not possible to maintain sessions. (Session simulation responsibility lies on the client-side to pass the session id)
+ REST does not impose security restrictions inherently. It inherits the security measures of the protocols implementing it. Hence, care must be chosen to implement security measures like integrating SSL/TLS based authentications, etc
+
+Differentiate between SOAP and REST
+
+|SOAP |REST|
+|---|---|
+|SOAP - Simple Object Access Protocol|REST - Representational State Transfer|
+|SOAP is a protocol used to implement web services.|REST is an architectural design pattern for developing web services|
+|SOAP cannot use REST as it is a protocol.|REST architecture can have SOAP protocol as part of the implementation.|
+|SOAP specifies standards that are meant to be followed strictly.|REST defines standards but they need not be strictly followed.|
+|SOAP client is more tightly coupled to the server which is similar to desktop applications having strict contracts.|The REST client is more flexible like a browser and does not depend on how the server is developed unless it follows the protocols required for establishing communication.|
+|SOAP supports only XML transmission between the client and the server.|REST supports data of multiple formats like XML, JSON, MIME, Text, etc.|
+|SOAP reads are not cacheable.|REST read requests can be cached.|
+|SOAP uses service interfaces for exposing the resource logic.|REST uses URI to expose the resource logic.|
+|SOAP is slower.|REST is faster.|
+|Since SOAP is a protocol, it defines its own security measures.|REST only inherits the security measures based on what protocol it uses for the implementation.|
+|SOAP is not commonly preferred, but they are used in cases which require stateful data transfer and more reliability.|REST is commonly preferred by developers these days as it provides more scalability and maintainability.|
+
+## AWS: Worked on azure instead
+
+---
+Services used
+
+## Microservices
+
+---
+Advantages
+
+request queuing
+
+## Web Services
+---
+
+Authentication
+
+- types:
+
+  - Password-based authentication
+
+  - Multi-factor authentication
+
+  - Certificate-based authentication
+
+  - Biometric authentication
+
+  - Token-based authentication
+
+  - SSO authentication
+
+  - Azure AD
+
+Authorization
+
+## Testing
+
+---
+
+## Docker
+
+---
+
+## coding Request
+
+---
+
+1. [1, 5, 20, 25, 29, 30, 34, 50, 70, 80]
+
+2. [
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+ ["a", "a", "a", "a", "a", "a", "a"]
+] Find Name
+
+3.
+
+```csharp
+  public static void Main(string[] args)
+  {
+      var encrypted = Encrypt("abbcccddddf");
+      Console.WriteLine(encrypted); // 1a2b3c4d1f
+
+      var decrypted = Decrypt(encrypted);
+      Console.WriteLine(decrypted); // "abbcccddddf"
+  }
+
+  public static string Encrypt(string value)
+  {
+      throw new NotImplementedException();
+  }
+
+  public static string Decrypt(string value)
+  {
+      throw new NotImplementedException();
+  }
+```
+
+## deployment
+
+---
+What do you use for deployment IIS, apache ,linux
+
+# Load balancer
