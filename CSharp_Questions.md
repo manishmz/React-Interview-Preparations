@@ -530,6 +530,7 @@ public class CustomMiddleware
 ```
 ##### Dependency injection
 - Dependency Injection (DI) is a design pattern commonly used in .NET development to achieve loose coupling between classes and manage dependencies more effectively. In DI, the dependencies of a class are provided from the outside rather than created within the class itself. This allows for better maintainability, testability, and flexibility in your codebase.
+- In .net framework used Unity nuget package
 ##### SOLID principles
 The SOLID principles are a set of five design principles in object-oriented programming that aim to make software designs more maintainable, flexible, and easier to understand. Each principle focuses on a specific aspect of software design and encourages developers to write clean, modular, and extensible code.
 1. Single Responsibility Principle (SRP):
