@@ -1,6 +1,6 @@
 ## .Net
 
-OOPS Concepts
+##### OOPS Concepts
   Encapsulation
   - It refers to the bundling of data (attributes) and methods (functions) that operate on the data into a single unit, known as a class. 
     Encapsulation helps in hiding the internal state of an object and restricting access to certain parts of the object. 
@@ -16,15 +16,15 @@ OOPS Concepts
   - Polymorphism is the ability of objects to take on different forms or behaviors based on the context in which they are used.
     There are two types of polymorphism: compile-time polymorphism (method overloading) and runtime polymorphism (method overriding).
 
-SOLID Principal
+##### SOLID Principal
 
-Valuetype ReferenceType
+##### Valuetype ReferenceType
 Key differences between value types and reference types:
 - Value types are stored directly in memory, while reference types store references to memory locations.
 - Assigning a value type variable creates a copy of the data, while assigning a reference type variable creates a reference to the same data.
 - Changes to a value type variable do not affect other variables, while changes to a reference type variable affect all variables pointing to the same object.
 
-Boxing Unboxing
+##### Boxing Unboxing
 1. Boxing:
 - Boxing is the process of converting a value type (such as an integer, float, or struct) to an object reference type (System.Object) or an interface type.
 - When a value type is boxed, a new object is created on the heap to store the value, and a reference to that object is returned.
@@ -38,33 +38,73 @@ Example of boxing in C#:
 Example of unboxing in C#:
   object boxedNumber = 42;<br>int number = (int)boxedNumber; // Unboxing the object reference to an integer value
 
-Recursive functions
+##### Recursive functions
 
-Singleton
+##### Singleton
 
-Dependency injection
-
+##### Dependency injection
 - Have you used any nuget package?
 - Singleton in Dependency
 
-Delegates (Action and Func and Predicate)
+##### Delegates (Action and Func and Predicate)
 
-Mutable vs immutable (string, int, object)
+##### Mutable vs immutable (string, int, object)
 
-Garbage collector
+##### Garbage collector
+In C# .NET, the Garbage Collector (GC) is responsible for managing memory allocation and deallocation in a managed environment. The GC automatically reclaims memory that is no longer in use by identifying and collecting objects that are no longer reachable by the application.
+The Garbage Collector categorizes objects based on their lifetime into three main generations: Generation 0, Generation 1, and Generation 2. These generations help the GC optimize memory management by taking into account the different lifetimes of objects.
+1. Short-lived objects (Generation 0):
+- Short-lived objects are typically newly created objects that are short-lived and have a small lifetime.
+- Objects in Generation 0 are considered short-lived because they are expected to become unreachable quickly after being created.
+- The Garbage Collector collects Generation 0 objects more frequently than objects in higher generations.
+- Most objects fall into this category, and they are collected quickly to free up memory.
+2. Long-lived objects (Generation 1 and Generation 2):
+- Long-lived objects are objects that survive multiple garbage collection cycles and have a longer lifetime.
+- Objects that survive the garbage collection process in Generation 0 are promoted to Generation 1, and if they survive further collections, they are promoted to Generation 2.
+- Generation 1 and Generation 2 contain objects that are considered long-lived and are less likely to be collected during each garbage collection cycle.
+- Garbage collection for Generation 1 and Generation 2 occurs less frequently compared to Generation 0.
+3. Longest-lived objects:
+- The longest-lived objects are typically static objects, application-wide objects, or objects that persist for the entire duration of the application.
+- These objects are usually allocated once and remain in memory throughout the application's lifetime.
+- The Garbage Collector does not reclaim memory for these objects unless the application is terminated.
 
- Short live
- long live
- longest live
+##### Garbage collector work on Managed vs unmanaged code
+1. Managed Code:
+- The Garbage Collector is responsible for managing memory allocation and deallocation for objects created in managed code.
+- In managed code, memory allocation is done using the new keyword or other memory allocation mechanisms provided by the CLR.
+- The Garbage Collector tracks object references and determines when objects are no longer reachable by the application, allowing it to reclaim memory by collecting and deallocating those objects.
+- Managed code benefits from automatic memory management, reducing the risk of memory leaks and simplifying memory management for developers.
+2. Unmanaged Code:
+- Unmanaged code refers to code that does not run within the CLR environment and does not benefit from the automatic memory management provided by the Garbage Collector.
+- In unmanaged code, memory allocation and deallocation are typically done manually by the developer using functions like malloc and free in C or C++.
+- The Garbage Collector does not have visibility or control over memory allocated by unmanaged code, as it operates at the managed code level within the CLR.
+- If unmanaged code is used within a managed application, developers need to ensure proper memory management to prevent memory leaks and other memory-related issues.
 
-Garbage collector work on Managed vs unmanaged code
+##### List vs Arrays => How list does it dynamically.
 
-List vs Arrays => How list does it dynamically.
-
-Thread vs Task
+##### Thread vs Task
   => Return types of Task > Void, Task, Task<T>, ValueTask, ValueTask<T>
+  1. Task:
+- Represents an asynchronous operation that does not return a result.
+- The method returns a Task object, which can be used to track the status and completion of the asynchronous operation.
+- Example: Task DoSomethingAsync()
+2. Task<T>:
+- Represents an asynchronous operation that returns a result of type T.
+- The method returns a Task<T> object, which can be awaited to retrieve the result of the asynchronous operation.
+- Example: Task<int> CalculateAsync()
+3. Task<Void> (Obsolete):
+- Represents an asynchronous operation that does not return a result.
+- This type is obsolete and should not be used. Instead, use Task for asynchronous operations without a return value.
+4. ValueTask:
+- Represents an asynchronous operation that does not return a result.
+- Similar to Task, but optimized for scenarios where allocations should be minimized.
+- Example: ValueTask DoSomethingAsync()
+5. ValueTask<T>:
+- Represents an asynchronous operation that returns a result of type T.
+- Similar to Task<T>, but optimized for scenarios where allocations should be minimized.
+- Example: ValueTask<int> CalculateAsync()
 
-Context Switching
+##### Context Switching
 
 Linked List
 
