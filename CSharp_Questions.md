@@ -706,7 +706,7 @@ Query Execution | In-memory | At the data source
 Performance | Less efficient for large data sets | More efficient for large data sets
 Use Case | LINQ to Objects | LINQ to SQL/Entities
 
-##### Threading vs Task
+##### Thread vs Task
 In C#, both threading and tasks are used for parallel programming to execute multiple operations concurrently. However, there are some key differences between threading and tasks:
 1. Threading:
 - Threading involves creating and managing threads explicitly using the Thread class in the System.Threading namespace.
@@ -719,6 +719,7 @@ In C#, both threading and tasks are used for parallel programming to execute mul
 - Tasks use a thread pool under the hood, which manages the execution of tasks on available threads from the pool.
 - Tasks support features like continuation, cancellation, exception handling, and composition, making it easier to work with asynchronous operations.
 - Tasks can be created using the Task class or the Task.Run method, which queues the task to the thread pool.
+
 In summary, while threading provides more control and flexibility at a lower level, tasks offer a higher-level abstraction that simplifies parallel programming and asynchronous operations. Tasks are generally preferred for most parallel programming scenarios due to their ease of use and built-in features for managing asynchronous operations.
 
 ##### Database connection in .Net
