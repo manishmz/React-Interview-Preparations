@@ -52,7 +52,7 @@ We can use `prop-types` library or `typescript`
 import Reat from 'react';
 import PropTypes from 'prop-types';
 
-const Test = () => {
+const Test = (props) => {
     return <Fragment>
         <h1>{props.str}</h1>
         <span>{props.bool ? 'YES' : 'NO'}</span>
