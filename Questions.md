@@ -108,7 +108,7 @@ const ButtonOne = (props) => {
 export default stylesWrapper(ButtonOne);
 ```
 ### What is Redux
-Redux is a library which used to manage state in application, i.e sharing data over all components very easily.
+Redux is a library which used to manage state in application, i.e sharing data over all components very easily. Redux uses flux architechture design pattern
 ##### Without using hooks
 `reducer.js`
 ```
