@@ -257,6 +257,8 @@ export function* watchAgeUp() {
     yield takeEvery('AGE_UP', ageUpAsync);
 }
 ```
+### Pure component
+In React, a pure component is a type of component that optimizes performance by automatically implementing a shallow comparison of props and state to determine if a re-render is necessary. This is in contrast to regular components, which re-render whenever their parent component re-renders, even if their props and state haven't changed.
 ### Whait is react Memo
 It's an alternate option for Pure component and shouldComponentUpdate.
 It's for an fucntional component as above alternatives for class component.
