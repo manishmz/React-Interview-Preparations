@@ -338,6 +338,7 @@ export default SomeCustomErrorCoundComp;
 
 ### What is context-api
 context api used to allow to access props to descendents childs. Solution for prop drilling
+
 `Context.js`
 ```
 import React, { createContext, useState } from "react";
@@ -421,7 +422,7 @@ export default Label;
 passsing component as function
 
 ##### What is Fragment
-React return single element when render. So Wrapping multiple elements we use Fragments. We can use <div> but at last it can also have some css attach.
+React return single element when render. So Wrapping multiple elements we use Fragments. We can use `<div>` but at last it can also have some css attach.
 
 ##### How to do code splitting in react
 When the react bundles, its a huge bundle. so while loading website to gets slow because of bundle size.
