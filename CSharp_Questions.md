@@ -10,6 +10,11 @@ Iterator is a behavioral design pattern that lets you traverse elements of a col
 - Problem solved:
 The Iterator Pattern solves the problem of iterating over a collection of objects without exposing the details of the collection's implementation. It decouples the client code from the internal structure of the collection, making it easier to iterate over different types of collections without modifying the client code.
 ##### Decorator design  pattern
+- The decorator design pattern is a structural design pattern that allows you to add new behaviors or responsibilities to individual objects dynamically without altering their structure. It's a flexible alternative to subclassing for extending functionality, allowing you to add or remove features at runtime. 
+- Extending a class is the first thing that comes to mind when you need to alter an object’s behavior. However, inheritance has several serious caveats that you need to be aware of.
+Inheritance is static. You can’t alter the behavior of an existing object at runtime. You can only replace the whole object with another one that’s created from a different subclass.
+Subclasses can have just one parent class. In most languages, inheritance doesn’t let a class inherit behaviors of multiple classes at the same time.
+One of the ways to overcome these caveats is by using Aggregation or Composition  instead of Inheritance. Both of the alternatives work almost the same way: one object has a reference to another and delegates it some work, whereas with inheritance, the object itself is able to do that work, inheriting the behavior from its superclass.
 https://refactoring.guru/design-patterns/decorator
 ![image](https://github.com/user-attachments/assets/cf1d55dc-1c93-4fc4-a86f-26a38ecdfdb3)
 ![image](https://github.com/user-attachments/assets/18e01335-5012-4709-b420-796066531034)
