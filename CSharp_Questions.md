@@ -5,6 +5,15 @@ The BFF (Backend for Frontend) design pattern is an architectural pattern that i
 issue - Each mocriservice is responsible for a specific business capability and exposes its own API. For frontend, it can be challenging to consume multiple microservices directly, as it may result in increased complexity, performance issues, and tight coupling between the frontend and backend.
 Advantage
 - The BFF acts as a proxy between the frontend and the backend microservices, providing a dedicated API that is optimized for the frontend's requirements. It encapsulates the complexity of aggregating data from multiple services, handling authentication and authorization, and adapting the responses to fit the frontend's needs.
+##### Iterator design pattern
+Iterator is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
+- Problem solved:
+The Iterator Pattern solves the problem of iterating over a collection of objects without exposing the details of the collection's implementation. It decouples the client code from the internal structure of the collection, making it easier to iterate over different types of collections without modifying the client code.
+##### Decorator design  pattern
+https://refactoring.guru/design-patterns/decorator
+![image](https://github.com/user-attachments/assets/cf1d55dc-1c93-4fc4-a86f-26a38ecdfdb3)
+![image](https://github.com/user-attachments/assets/18e01335-5012-4709-b420-796066531034)
+
 ##### 3 level api design - Use LinkGenerator class in Microsoft.AspNetCore.Routing
 1. Presentation Layer
 2. Business Logic Layer
