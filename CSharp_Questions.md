@@ -18,7 +18,8 @@ One of the ways to overcome these caveats is by using Aggregation or Composition
 https://refactoring.guru/design-patterns/decorator
 ![image](https://github.com/user-attachments/assets/cf1d55dc-1c93-4fc4-a86f-26a38ecdfdb3)
 ![image](https://github.com/user-attachments/assets/18e01335-5012-4709-b420-796066531034)
-
+##### Command design pattern
+https://refactoring.guru/design-patterns/command
 ##### 3 level api design - Use LinkGenerator class in Microsoft.AspNetCore.Routing
 1. Presentation Layer
 2. Business Logic Layer
