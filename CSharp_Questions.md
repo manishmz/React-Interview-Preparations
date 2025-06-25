@@ -203,6 +203,7 @@ Singleton, Scoped, and Transient are different lifetimes or scopes used in depen
 2. Scoped: In the Scoped lifetime, a new instance of a dependency is created for each scope or request.
 3. Transient: In the Transient lifetime, a new instance of a dependency is created every time it is requested.
 ##### Handle Global Exception
+- Using middleware
 ```cs
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
@@ -212,6 +213,15 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     app.UseExceptionHandler("/error"); // For production, call custom api "/error"
 }
 ```
+- Using IExceltionFilter
+  Create an exception filter class that implements the IExceptionFilter interface. This interface defines the OnException method, which is called when an exception occurs.
+  Register the exception filter in the Startup.cs file of your ASP.NET Core application within the ConfigureServices method.
+  ```cs
+  public void ConfigureServices(IServiceCollection services)
+  {
+     services.AddControllers(options => { options.Filters.Add<GlobalExceptionFilter>(); });
+  }
+  ```
 ##### Logging
 Logging log data into console if project runs through console, log into output window of visual studio, also log into file using logging framework Nlog and Serilog.
 ##### Identity
@@ -466,6 +476,7 @@ SALARY | ROW_NUMBER | RANK | DENSE_RANK
 3000   | 9          | 9    | 6
 
 Syntax are same for all just need to use rank, dense_rank or row_number
+##### Execution plan viewer
 ### C# .net questions
 ##### new vs virtual vs override
 ##### IDisposable vs Descructor VS Finalize
