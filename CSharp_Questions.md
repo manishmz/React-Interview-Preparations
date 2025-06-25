@@ -88,6 +88,26 @@ Types of Delegates:
   - Func<para1, para2, returntype> or Func<T, TResult>
   - Action<T> : return type is void, ex: Action<int, string>
   - Predicate<T> : return type is true or false, Predicate<int, string>
+##### How are events are different from delegates
+Events are encapsulation over delegates. they help to implement publisher/subscriber model
+##### Covariance and Contravariance
+- Covariance allows a method to return a more derived type than specified by the generic parameter.
+  Keyword: out
+  Used with: Generic interfaces and delegates
+  Direction: Output (return values)
+  ```
+  IEnumerable<string> strings = new List<string>();
+  IEnumerable<object> objects = strings; // Valid because of covariance
+  ```
+  Here, IEnumerable<out T> is covariant, so IEnumerable<string> can be assigned to IEnumerable<object>.
+- Contravariance allows a method to accept parameters of a less derived type than specified by the generic parameter.
+  Keyword: in
+  Used with: Generic interfaces and delegates
+  Direction: Input (method parameters)
+  ```
+  Action<object> actObject = obj => Console.WriteLine(obj);
+  Action<string> actString = actObject; // Valid because of contravariance
+  ```
 ##### angualr pacakges
 ##### Restrict api request of different region
 1. IP-based Filtering:
