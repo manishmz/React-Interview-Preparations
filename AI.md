@@ -10,4 +10,21 @@
 
 <img width="703" height="646" alt="image" src="https://github.com/user-attachments/assets/8afce076-1c54-47d2-940f-2a987f6ca524" />
 
-GuardRails in CrewAI
+##### GuardRails in CrewAI
+
+#### LangChain
+- where you're solving problems that involve a lot of interconnected processes, like an agentic platform.
+So it's an abstraction layer that allows you to organize your thinking around a workflow of different
+activities that could have feedback loops.
+It could have times when humans need to get involved.
+It could have moments when you need to keep memory, and it allows you to organize all of that in a
+very repeatable and easily monitored and stable and scalable way.
+- you use this to design agent driven user experiences featuring things like human in the loop, multi-agent collaboration, conversation, history, memory, and what they call time travel, which is all about being able to checkpoint where you are in the process of being able to step backwards if you need to, to restore where you were as of at any point in time.
+A deploy with fault tolerant scalability, meaning that anything can go down and it will keep running.
+#### LangSmith
+Lang Smith to monitor what's going on in your Lang graph graph.
+
+<img width="935" height="1006" alt="image" src="https://github.com/user-attachments/assets/42daec7d-874f-48d6-92ba-ee26c173c211" />
+
+#### LangGraph
+<img width="657" height="671" alt="image" src="https://github.com/user-attachments/assets/d71a941b-dc43-4b5a-9258-a4b4cbdafe67" />
