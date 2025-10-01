@@ -28,3 +28,5 @@ Lang Smith to monitor what's going on in your Lang graph graph.
 
 #### LangGraph
 <img width="657" height="671" alt="image" src="https://github.com/user-attachments/assets/d71a941b-dc43-4b5a-9258-a4b4cbdafe67" />
+<img width="540" height="597" alt="image" src="https://github.com/user-attachments/assets/d11d7255-8014-4336-9701-e4ca16e35210" />
+<img width="552" height="557" alt="image" src="https://github.com/user-attachments/assets/75193b6a-2599-4445-88da-a906d5e55b2c" />
