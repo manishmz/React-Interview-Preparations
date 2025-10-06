@@ -34,5 +34,6 @@ Lang Smith to monitor what's going on in your Lang graph graph.
 #### AutoGen - Microsoft
 <img width="633" height="605" alt="image" src="https://github.com/user-attachments/assets/bce1006a-76d6-4f98-96b0-7d3e0035e5fd" />
 <img width="512" height="565" alt="image" src="https://github.com/user-attachments/assets/cc7efa4a-6d8b-43d9-861d-b9d68eedbba2" />
+<img width="575" height="420" alt="image" src="https://github.com/user-attachments/assets/b322dc8c-9d33-4a36-92ab-e692f5738641" />
 
 
