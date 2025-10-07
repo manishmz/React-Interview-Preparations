@@ -36,4 +36,7 @@ Lang Smith to monitor what's going on in your Lang graph graph.
 <img width="512" height="565" alt="image" src="https://github.com/user-attachments/assets/cc7efa4a-6d8b-43d9-861d-b9d68eedbba2" />
 <img width="575" height="420" alt="image" src="https://github.com/user-attachments/assets/b322dc8c-9d33-4a36-92ab-e692f5738641" />
 
+#### MCP - Model Context Protocol
+<img width="718" height="625" alt="image" src="https://github.com/user-attachments/assets/c0b6e3dd-9705-4c49-8950-024d7b7d3810" />
+<img width="432" height="484" alt="image" src="https://github.com/user-attachments/assets/2d31e720-defd-45d0-a495-381f2823b0f0" />
 
