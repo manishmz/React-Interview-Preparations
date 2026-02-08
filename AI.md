@@ -40,3 +40,6 @@ Lang Smith to monitor what's going on in your Lang graph graph.
 <img width="718" height="625" alt="image" src="https://github.com/user-attachments/assets/c0b6e3dd-9705-4c49-8950-024d7b7d3810" />
 <img width="450" height="497" alt="image" src="https://github.com/user-attachments/assets/ab16bf50-32d2-4784-93aa-7e3f941739b2" />
 <img width="532" height="467" alt="image" src="https://github.com/user-attachments/assets/e27d9fc9-3026-49d2-bd75-9581ca5d53e0" />
+
+#### LLM Engineering Building Blocks
+<img width="881" height="457" alt="image" src="https://github.com/user-attachments/assets/0c6d81c3-87af-47ca-9521-ed29bb524a85" />
