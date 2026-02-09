@@ -43,3 +43,20 @@ Lang Smith to monitor what's going on in your Lang graph graph.
 
 #### LLM Engineering Building Blocks
 <img width="881" height="457" alt="image" src="https://github.com/user-attachments/assets/0c6d81c3-87af-47ca-9521-ed29bb524a85" />
+
+##### Closed Source Frontier LLM
+GPT from OpenAI
+Claude from Aunthropic
+Gemini from Google
+Grok from X.ai
+
+##### Open Source LLM
+Llama from Meta - 1st model
+Mixtral from Mistral
+Qwen from Alibaba Cloud
+Gemma from Google
+Phi from Microsoft
+DeepSeek from DeepSeek AI (Famous when launched due to low costing around 4M$ for training the model)
+GPT-OSS from OpenAI
+
+<img width="860" height="460" alt="image" src="https://github.com/user-attachments/assets/44fcbfc3-43fe-452e-a2d2-6161afeb53ab" />
