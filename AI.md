@@ -60,3 +60,9 @@ DeepSeek from DeepSeek AI (Famous when launched due to low costing around 4M$ fo
 GPT-OSS from OpenAI
 
 <img width="860" height="460" alt="image" src="https://github.com/user-attachments/assets/44fcbfc3-43fe-452e-a2d2-6161afeb53ab" />
+
+##### Parameters and tokens in LLM
+Parameters determines how big is LLM. Its from millions to trillions of parameters. More the parameter more the size and intellegent llm be. Its only defined how much data it trians on.
+Tokens - When we send a text to llm, it creates a tokens out of it. each word or half of the word can be the token. Less common words (and invented words) get broken into multiple tokens.
+LLM api cost is based on number of input tokens and number of output tokens.
+<img width="892" height="286" alt="image" src="https://github.com/user-attachments/assets/3007555e-945a-43b5-b2e1-a810e8b9a52f" />
