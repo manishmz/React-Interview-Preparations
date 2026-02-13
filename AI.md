@@ -13,6 +13,7 @@
 ##### GuardRails in CrewAI
 
 #### LangChain
+- LangChain is an open‑source framework designed to help developers build applications powered by large language models (LLMs) such as GPT, Claude, Gemini, and others. It provides modular building blocks—like prompts, chains, agents, memory, and data connectors—that make it easier to turn raw LLM capabilities into real, production‑ready AI applications.
 - where you're solving problems that involve a lot of interconnected processes, like an agentic platform.
 So it's an abstraction layer that allows you to organize your thinking around a workflow of different
 activities that could have feedback loops.
