@@ -67,3 +67,14 @@ Parameters determines how big is LLM. Its from millions to trillions of paramete
 Tokens - When we send a text to llm, it creates a tokens out of it. each word or half of the word can be the token. Less common words (and invented words) get broken into multiple tokens.
 LLM api cost is based on number of input tokens and number of output tokens.
 <img width="892" height="286" alt="image" src="https://github.com/user-attachments/assets/3007555e-945a-43b5-b2e1-a810e8b9a52f" />
+
+#### Prompt
+- In System Prompt, Establish the ground rule like "If you don't know the answer, just say so". Provide critical background context. Add expertise to the prompt
+- Context, During the conversation, insert context to give more relevant background informartion pertaining to the topic
+- Multi Short Prompting, In prompt provide example for specific scenario, train it.
+- To use cache token, give the static prompt first and then the dynamic one, as a result LLM api's call cost you less.
+- You can add conditional prompt in the system prompt based on the user message, it will reduce sending extra tokens always to the api.
+example given below. Not a proper way to use it. instead we use RAG
+<img width="1460" height="380" alt="image" src="https://github.com/user-attachments/assets/bbfda52b-db90-4cd4-9fc5-9a372e7e2ee5" />
+- 
+  <img width="1331" height="182" alt="image" src="https://github.com/user-attachments/assets/e120d3ac-a38d-4cae-b90a-905805a6c42e" />
