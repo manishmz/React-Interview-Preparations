@@ -61,7 +61,7 @@ DeepSeek from DeepSeek AI (Famous when launched due to low costing around 4M$ fo
 GPT-OSS from OpenAI
 
 <img width="860" height="460" alt="image" src="https://github.com/user-attachments/assets/44fcbfc3-43fe-452e-a2d2-6161afeb53ab" />
-##### What is Transformers
+#### What is Transformers
 - The Transformer is a type of neural network architecture that has become foundational in the field of natural language processing (NLP) and beyond. Introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017, the Transformer model has revolutionized how we approach tasks like translation, text generation, and more.
 <img width="917" height="427" alt="image" src="https://github.com/user-attachments/assets/ae300bbc-d6e9-4075-95a7-fcd5de551a50" />
 
@@ -81,3 +81,6 @@ example given below. Not a proper way to use it. instead we use RAG
 <img width="1460" height="380" alt="image" src="https://github.com/user-attachments/assets/bbfda52b-db90-4cd4-9fc5-9a372e7e2ee5" />
 - 
   <img width="1331" height="182" alt="image" src="https://github.com/user-attachments/assets/e120d3ac-a38d-4cae-b90a-905805a6c42e" />
+#### Hugging Face
+- Hugging Face is a leading open-source platform and community for AI, acting as a "GitHub for Machine Learning" where users can share, discover, and collaborate on models, datasets, and demos
+<img width="1126" height="670" alt="image" src="https://github.com/user-attachments/assets/2d0b27f1-322b-464d-8bd1-85b794f09c32" />
