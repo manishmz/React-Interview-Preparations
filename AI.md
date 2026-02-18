@@ -61,6 +61,9 @@ DeepSeek from DeepSeek AI (Famous when launched due to low costing around 4M$ fo
 GPT-OSS from OpenAI
 
 <img width="860" height="460" alt="image" src="https://github.com/user-attachments/assets/44fcbfc3-43fe-452e-a2d2-6161afeb53ab" />
+##### What is Transformers
+- The Transformer is a type of neural network architecture that has become foundational in the field of natural language processing (NLP) and beyond. Introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017, the Transformer model has revolutionized how we approach tasks like translation, text generation, and more.
+<img width="917" height="427" alt="image" src="https://github.com/user-attachments/assets/ae300bbc-d6e9-4075-95a7-fcd5de551a50" />
 
 ##### Parameters and tokens in LLM
 Parameters determines how big is LLM. Its from millions to trillions of parameters. More the parameter more the size and intellegent llm be. Its only defined how much data it trians on.
