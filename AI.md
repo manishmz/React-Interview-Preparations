@@ -1,3 +1,5 @@
+# Github Links
+https://github.com/ed-donner/llm_engineering
 # Terminologies
 #### openai library
 #### openai agent sdk
@@ -88,3 +90,6 @@ example given below. Not a proper way to use it. instead we use RAG
 #### Google Colab
 <img width="800" height="678" alt="image" src="https://github.com/user-attachments/assets/f12df2d6-825d-446c-a3df-365535e22d78" />
 
+##### Two API levels of hugging face
+- Pipelines: Higher level API's to carrry out standard task incredibly quickly.
+- Tokenizers and Models: Lower level API's to provide most power and control
