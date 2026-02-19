@@ -84,3 +84,7 @@ example given below. Not a proper way to use it. instead we use RAG
 #### Hugging Face
 - Hugging Face is a leading open-source platform and community for AI, acting as a "GitHub for Machine Learning" where users can share, discover, and collaborate on models, datasets, and demos
 <img width="1126" height="670" alt="image" src="https://github.com/user-attachments/assets/2d0b27f1-322b-464d-8bd1-85b794f09c32" />
+
+#### Google Colab
+<img width="800" height="678" alt="image" src="https://github.com/user-attachments/assets/f12df2d6-825d-446c-a3df-365535e22d78" />
+
