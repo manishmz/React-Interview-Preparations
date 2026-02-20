@@ -93,3 +93,12 @@ example given below. Not a proper way to use it. instead we use RAG
 ##### Two API levels of hugging face
 - Pipelines: Higher level API's to carrry out standard task incredibly quickly.
 - Tokenizers and Models: Lower level API's to provide most power and control
+
+#### Difussion Models vs Transformers
+##### Overview
+- Diffusion models are a class of generative models that have gained attention for their ability to generate high-quality data, such as images. They are based on the idea of gradually transforming a simple distribution (like Gaussian noise) into a complex data distribution through a series of steps.
+- Transformers are a type of neural network architecture that has become foundational in natural language processing (NLP) and other domains. They are known for their ability to handle sequential data efficiently through mechanisms like self-attention.
+##### Comparison
+- Purpose: Diffusion models are primarily used for generative tasks, especially in image synthesis, while Transformers are versatile and widely used in NLP and other sequential data tasks.
+- Mechanism: Diffusion models rely on a gradual transformation process, whereas Transformers use attention mechanisms to process data.
+- Applications: While both can be used in creative AI applications, their specific use cases often differ, with diffusion models focusing on generation and Transformers on understanding and processing sequences.
