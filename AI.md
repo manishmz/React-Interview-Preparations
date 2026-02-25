@@ -102,3 +102,7 @@ example given below. Not a proper way to use it. instead we use RAG
 - Purpose: Diffusion models are primarily used for generative tasks, especially in image synthesis, while Transformers are versatile and widely used in NLP and other sequential data tasks.
 - Mechanism: Diffusion models rely on a gradual transformation process, whereas Transformers use attention mechanisms to process data.
 - Applications: While both can be used in creative AI applications, their specific use cases often differ, with diffusion models focusing on generation and Transformers on understanding and processing sequences.
+
+#### Quantization
+Quantization can significantly reduce the size and computational requirements of LLMs, making them more suitable for deployment on edge devices or in environments with limited resources. However, it may also lead to a loss in model accuracy, so careful consideration and testing are necessary to balance efficiency and performance.
+ex: lets says, If we 16 bits or 32 bits for storing the data for parameters, Now we will use 4 bits, by cutting the data and store which will fit in 4 bit. The datatype called NF4.
