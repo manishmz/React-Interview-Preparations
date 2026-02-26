@@ -106,3 +106,15 @@ example given below. Not a proper way to use it. instead we use RAG
 #### Quantization
 Quantization can significantly reduce the size and computational requirements of LLMs, making them more suitable for deployment on edge devices or in environments with limited resources. However, it may also lead to a loss in model accuracy, so careful consideration and testing are necessary to balance efficiency and performance.
 ex: lets says, If we 16 bits or 32 bits for storing the data for parameters, Now we will use 4 bits, by cutting the data and store which will fit in 4 bit. The datatype called NF4.
+
+#### Pytorch library is use to write neural network in python.
+
+#### Projects
+- In screenconnect we have a meeting session, same as teams, So we use AI to create meeting minutes, where we record the audio, then transcript it to text 
+audio models for transcriptions: - hugging space "openai/whiser-medium.en" - open source, gpt-40-mini-transcribe paid model
+<img width="1010" height="610" alt="image" src="https://github.com/user-attachments/assets/4676f937-1dc8-4aae-84af-31fc9f6f8592" />
+<img width="938" height="392" alt="image" src="https://github.com/user-attachments/assets/29fcd798-7b2c-4a9e-a46c-b7b052e74543" />
+<img width="908" height="261" alt="image" src="https://github.com/user-attachments/assets/88128ecb-9b37-45f2-b538-02268b8d3d79" />
+
+#### Which LLM is nest one?
+
