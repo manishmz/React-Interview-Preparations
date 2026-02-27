@@ -117,4 +117,11 @@ audio models for transcriptions: - hugging space "openai/whiser-medium.en" - ope
 <img width="908" height="261" alt="image" src="https://github.com/user-attachments/assets/88128ecb-9b37-45f2-b538-02268b8d3d79" />
 
 #### Which LLM is nest one?
+There is no such best model, instead it should be for particularl model whats the best model.
+Whats the right LLM for the task in hand.
+<img width="722" height="636" alt="image" src="https://github.com/user-attachments/assets/234021e3-fb8b-4942-972b-aaff07fe5b43" />
+Context window - Total history it had of our conversation
+Even if you are using free LLM model, but still it costing you it run that model on your machine, hardware cost. or if your hosting it somewhere.
+<img width="713" height="552" alt="image" src="https://github.com/user-attachments/assets/c1ad9e18-6106-4f4b-8db5-589d2f0031a5" />
+<img width="942" height="623" alt="image" src="https://github.com/user-attachments/assets/3623a2f7-9458-4230-bd66-e92ca4b94b3a" />
 
