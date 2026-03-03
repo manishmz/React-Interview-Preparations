@@ -125,4 +125,16 @@ Even if you are using free LLM model, but still it costing you it run that model
 <img width="713" height="552" alt="image" src="https://github.com/user-attachments/assets/c1ad9e18-6106-4f4b-8db5-589d2f0031a5" />
 <img width="942" height="623" alt="image" src="https://github.com/user-attachments/assets/3623a2f7-9458-4230-bd66-e92ca4b94b3a" />
 <img width="747" height="502" alt="image" src="https://github.com/user-attachments/assets/10c548eb-b0bb-47c4-b94f-46b480c9dd31" />
+How to evaluate performance of Gen AI solution?
+
+#### RAG (Retrieval Augumented Generation)
+<img width="958" height="663" alt="image" src="https://github.com/user-attachments/assets/e9495350-361b-483c-914f-21bdb7d86b9b" />
+This is a technique used to improve the performance of language models by combining retrieval mechanisms with generative capabilities. Here's how it generally works:
+1. Retrieval: The system first retrieves relevant information from a large corpus or database. This step involves searching for documents, passages, or data that are pertinent to the query or task at hand.
+2. Augmentation: The retrieved information is then used to augment the input to the language model. This can involve providing the model with additional context or facts that it might not have been able to generate on its own.
+3. Generation: Finally, the language model generates a response or output based on both the original input and the augmented information. This can lead to more accurate, informative, and contextually relevant responses.
+RAG is particularly useful in scenarios where the language model needs access to up-to-date information or specialized knowledge that isn't contained within its pre-trained parameters. By leveraging external data sources, RAG can enhance the model's ability to provide accurate and contextually rich outputs.
+<img width="1007" height="642" alt="image" src="https://github.com/user-attachments/assets/22b36589-e65f-417c-b3ab-98d94166cc34" />
+<img width="882" height="675" alt="image" src="https://github.com/user-attachments/assets/17075f6a-9469-4abb-bdf6-787029043560" />
+
 
