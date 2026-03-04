@@ -16,7 +16,7 @@ https://github.com/ed-donner/llm_engineering
 
 #### LangChain
 - LangChain is an open‑source framework designed to help developers build applications powered by large language models (LLMs) such as GPT, Claude, Gemini, and others. It provides modular building blocks—like prompts, chains, agents, memory, and data connectors—that make it easier to turn raw LLM capabilities into real, production‑ready AI applications.
-- where you're solving problems that involve a lot of interconnected processes, like an agentic platform.
+- when you're solving problems that involve a lot of interconnected processes, like an agentic platform.
 So it's an abstraction layer that allows you to organize your thinking around a workflow of different
 activities that could have feedback loops.
 It could have times when humans need to get involved.
@@ -24,6 +24,9 @@ It could have moments when you need to keep memory, and it allows you to organiz
 very repeatable and easily monitored and stable and scalable way.
 - you use this to design agent driven user experiences featuring things like human in the loop, multi-agent collaboration, conversation, history, memory, and what they call time travel, which is all about being able to checkpoint where you are in the process of being able to step backwards if you need to, to restore where you were as of at any point in time.
 A deploy with fault tolerant scalability, meaning that anything can go down and it will keep running.
+<img width="1152" height="675" alt="image" src="https://github.com/user-attachments/assets/46e6217e-e577-402f-80cf-906f8f72175e" />
+
+for usage - Udemy week 5 
 #### LangSmith
 Lang Smith to monitor what's going on in your Lang graph graph.
 
@@ -136,5 +139,8 @@ This is a technique used to improve the performance of language models by combin
 RAG is particularly useful in scenarios where the language model needs access to up-to-date information or specialized knowledge that isn't contained within its pre-trained parameters. By leveraging external data sources, RAG can enhance the model's ability to provide accurate and contextually rich outputs.
 <img width="1007" height="642" alt="image" src="https://github.com/user-attachments/assets/22b36589-e65f-417c-b3ab-98d94166cc34" />
 <img width="882" height="675" alt="image" src="https://github.com/user-attachments/assets/17075f6a-9469-4abb-bdf6-787029043560" />
+<img width="1116" height="612" alt="image" src="https://github.com/user-attachments/assets/4d7f4187-a566-4acd-b459-f4e320b73824" />
+<img width="1202" height="657" alt="image" src="https://github.com/user-attachments/assets/e6285997-6c7e-47fa-a3d7-0980b7eb0f3b" />
+
 
 
