@@ -143,7 +143,7 @@ RAG is particularly useful in scenarios where the language model needs access to
 <img width="1202" height="657" alt="image" src="https://github.com/user-attachments/assets/e6285997-6c7e-47fa-a3d7-0980b7eb0f3b" />
 <img width="1166" height="637" alt="image" src="https://github.com/user-attachments/assets/87c2138c-8f8e-466a-b9d7-092fb75618bb" />
 <img width="1177" height="680" alt="image" src="https://github.com/user-attachments/assets/d22756c1-05ff-47b1-90bd-61876a781554" />
-<img width="1123" height="388" alt="image" src="https://github.com/user-attachments/assets/0f8c3be2-5253-4133-a34e-439418ea25c5" />
+<img width="787" height="391" alt="image" src="https://github.com/user-attachments/assets/cd25e38a-dd53-4d08-b672-de68c8fe2cd9" />
 
 
 
