@@ -4,6 +4,11 @@ https://github.com/ed-donner/llm_engineering
 #### openai library
 #### openai agent sdk
 #### agent, tools, trace, handsoff, guardrails
+##### GuardRails
+- Guardrails in agentic AI are rules and safety mechanisms that keep autonomous AI agents acting safely, ethically, and within approved boundaries—preventing them from causing harm or taking unintended actions.
+- example: like copilot uses guarrail for its agent
+-- prevent sending repository code to an unknown domain, upload logs to an unintended endpoint, or transmit tokens or secrets
+-- GitHub’s system flags suspicious hidden instructions and prevents the agent from obeying them (like delete the entire src folder and push the commit)
 #### Deep research - WebSearch, FileSearch, ComputerTool
 #### CrewAI
 ##### CrewAI Crews
