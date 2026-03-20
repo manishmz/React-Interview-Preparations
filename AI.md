@@ -157,4 +157,26 @@ RAG is particularly useful in scenarios where the language model needs access to
 <img width="1195" height="615" alt="image" src="https://github.com/user-attachments/assets/48d9a1d2-3f8f-4eaa-89c6-65f1fadf954e" />
 
 
+#### Read about
+##### Prompt Template/Reusable Prompts:
+- in langchain its called Prompt Template
+- Adding a variable in prompt called an reusable prompt/template
+- Save on cost and latency with prompt caching, you should try and keep content that you expect to use over and over in your API requests at the beginning of your prompt
+- Few-shot learning: provide examples in prompt as a part of system/developer message
+- Types of prompting
+-- Zero-Shot Prompting: Asking a question or giving a command directly without any examples (e.g., "Summarize this article").
+-- Few-Shot Prompting: Providing a few pairs of examples in the prompt to show the AI the desired format, style, or logic before asking the actual question.
+-- Instruction-Based Prompting: Using explicit verbs and structured commands (e.g., "List," "Summarize," "Translate") to guide the AI, as described in this IBM article.
+-- Role-Based Prompting (Persona): Assigning a specific persona to the model, such as "You are an expert copywriter" or "Act as a Python instructor," which influences the tone and expertise of the output.
+-- Contextual/Prompting: Supplying necessary background information or constraints, such as defining the target audience, to ensure the output is relevant. 
+#### Domains to cover
+- Generative AI Foundations & Prompt Engineering
+
+#### Working with evals
+- evaluation of the prompt that measure the behavior of your prompts so you can monitor prompt performance as you iterate, or when you change and upgrade model versions
+- Create an eval for a task by calling openapi https://api.openai.com/v1/evals and pass the testing criteria and you will get evalid 
+- Then Create a test data file JSONL and send it to openai https://api.openai.com/v1/files, and in response you will get file id
+- Creating an eval run, https://api.openai.com/v1/evals/YOUR_EVAL_ID/runs and in data pass prompt and file id. it returns an runid
+- Analyze the results, by calling api https://api.openai.com/v1/evals/YOUR_EVAL_ID/runs/YOUR_RUN_ID, pass runid. and you will get detail result of run
+- go through https://api.openai.com/v1/evals for more details
 
