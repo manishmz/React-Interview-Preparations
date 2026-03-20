@@ -9,6 +9,9 @@ https://github.com/ed-donner/llm_engineering
 - example: like copilot uses guarrail for its agent
 -- prevent sending repository code to an unknown domain, upload logs to an unintended endpoint, or transmit tokens or secrets
 -- GitHub’s system flags suspicious hidden instructions and prevents the agent from obeying them (like delete the entire src folder and push the commit)
+##### Jailbreak
+- Jailbreaking in Large Language Models (LLMs) refers to the practice of using specially crafted prompts to bypass an AI's built-in safety guardrails, ethical guidelines, and content filters. When a jailbreak is successful, the LLM generates restricted, harmful, or prohibited content that it was explicitly programmed to refuse, such as instructions for illegal acts, hate speech, or private information.
+- implementing rule in system role prevents jailbreaking. System role instructions take precedence over user inputs, blocking unauthorized commands
 #### Deep research - WebSearch, FileSearch, ComputerTool
 #### CrewAI
 ##### CrewAI Crews
@@ -80,6 +83,16 @@ Parameters determines how big is LLM. Its from millions to trillions of paramete
 Tokens - When we send a text to llm, it creates a tokens out of it. each word or half of the word can be the token. Less common words (and invented words) get broken into multiple tokens.
 LLM api cost is based on number of input tokens and number of output tokens.
 <img width="892" height="286" alt="image" src="https://github.com/user-attachments/assets/3007555e-945a-43b5-b2e1-a810e8b9a52f" />
+- token-count threshold, It is important to set a token-count threshold such as 90% of the model's maximum token limit, for truncating history.
+- So that it will create a room for history
+- example
+- Imagine a model with a 1,000 token limit. You are building a customer support bot.
+The Problem: The user has been chatting for 20 minutes. The history now takes up 980 tokens.
+The User Asks: "Can you refund my order from yesterday?" (10 tokens)
+Total Input: 990 tokens.
+The Result: The model only has 10 tokens left to answer. It might manage to say "Yes, I can help..." before it hits 1,000 and cuts off mid-sentence.
+With a 90% Threshold (900 tokens):
+Your code sees the history hit 900 tokens and truncates (deletes) the oldest messages from the beginning of the chat. This clears up 200–300 tokens, ensuring the model has plenty of "whiteboard space" to read the new question and write a full, detailed response.
 
 #### Prompt
 - In System Prompt, Establish the ground rule like "If you don't know the answer, just say so". Provide critical background context. Add expertise to the prompt
@@ -169,8 +182,11 @@ RAG is particularly useful in scenarios where the language model needs access to
 -- Instruction-Based Prompting: Using explicit verbs and structured commands (e.g., "List," "Summarize," "Translate") to guide the AI, as described in this IBM article.
 -- Role-Based Prompting (Persona): Assigning a specific persona to the model, such as "You are an expert copywriter" or "Act as a Python instructor," which influences the tone and expertise of the output.
 -- Contextual/Prompting: Supplying necessary background information or constraints, such as defining the target audience, to ensure the output is relevant. 
+
 #### Domains to cover
 - Generative AI Foundations & Prompt Engineering
+- LLM Application Development & Integration
+- 
 
 #### Working with evals
 - evaluation of the prompt that measure the behavior of your prompts so you can monitor prompt performance as you iterate, or when you change and upgrade model versions
