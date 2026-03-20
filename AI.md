@@ -186,7 +186,9 @@ RAG is particularly useful in scenarios where the language model needs access to
 #### Domains to cover
 - Generative AI Foundations & Prompt Engineering
 - LLM Application Development & Integration
-- 
+- Context, Memory, and Retrieval-Augmented Generation
+- Fine-Tuning and Model Optimization
+- Advanced Agents & Production AI Operations
 
 #### Working with evals
 - evaluation of the prompt that measure the behavior of your prompts so you can monitor prompt performance as you iterate, or when you change and upgrade model versions
