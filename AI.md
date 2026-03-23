@@ -19,8 +19,20 @@ https://github.com/ed-donner/llm_engineering
 <img width="468" height="403" alt="image" src="https://github.com/user-attachments/assets/7b50fda3-d763-4499-a35f-fe2f75e2c0ba" />
 
 <img width="703" height="646" alt="image" src="https://github.com/user-attachments/assets/8afce076-1c54-47d2-940f-2a987f6ca524" />
+<img width="556" height="395" alt="image" src="https://github.com/user-attachments/assets/1da68129-8de1-4bd4-b769-bdbeae9289fd" />
 
 ##### GuardRails in CrewAI
+- pass guardrail parameter to Task constructor while createing a Task.
+- guardrail parameter accept a function or a descriptive string whats it needs to do.
+
+#### LiteLLM
+- LiteLLM is an open-source Python library and proxy server that acts as a universal "bridge" for Large Language Models. It allows you to call over 100 different LLMs (including OpenAI, Anthropic, Google Vertex AI, and Azure) using a single, standardized format—specifically the OpenAI API format. 
+- Key Features are given below:
+- Unified Interface: You can switch between models like GPT-4, Claude, and Llama 3 just by changing a string, without rewriting your integration code.
+- Production Reliability: It includes built-in retries and fallbacks. For example, if OpenAI is down, it can automatically route the request to a backup model like Anthropic.
+- Cost Management: The library provides tools to track token usage, set spending budgets per team or user, and log costs across multiple providers in real-time.
+- Proxy Server: Beyond a code library, it can run as a standalone Proxy Server that centralizes API keys, manages load balancing, and offers an admin dashboard for monitoring.
+- Privacy & Local Models: It supports local runtimes like Ollama, allowing you to route sensitive data to on-premise models instead of third-party cloud providers. 
 
 #### LangChain
 - LangChain is an open‑source framework designed to help developers build applications powered by large language models (LLMs) such as GPT, Claude, Gemini, and others. It provides modular building blocks—like prompts, chains, agents, memory, and data connectors—that make it easier to turn raw LLM capabilities into real, production‑ready AI applications.
@@ -34,7 +46,8 @@ very repeatable and easily monitored and stable and scalable way.
 A deploy with fault tolerant scalability, meaning that anything can go down and it will keep running.
 <img width="1152" height="675" alt="image" src="https://github.com/user-attachments/assets/46e6217e-e577-402f-80cf-906f8f72175e" />
 
-for usage - Udemy week 5 
+for usage - Udemy week 4
+
 #### LangSmith
 Lang Smith to monitor what's going on in your Lang graph graph.
 
