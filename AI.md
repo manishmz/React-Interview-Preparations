@@ -47,7 +47,25 @@ A deploy with fault tolerant scalability, meaning that anything can go down and 
 <img width="1152" height="675" alt="image" src="https://github.com/user-attachments/assets/46e6217e-e577-402f-80cf-906f8f72175e" />
 
 for usage - Udemy week 4
+#### LangChain vs. LangGraph: Key Differences
+The main difference between LangChain and LangGraph is the complexity and structure of the workflows they manage. While both are created by the same team, LangChain is built for linear, step-by-step sequences, whereas LangGraph is designed for non-linear, stateful, and cyclic workflows (loops). 
+| Feature | **LangChain** | **LangGraph** |
+| :--- | :--- | :--- |
+| **Core Concept** | **Chains**: Linear, sequential pipelines. | **Graphs**: Cyclic networks (Nodes + Edges). |
+| **Workflow** | **Linear** or **DAG** (Directed Acyclic Graph); no loops. | **Cyclic**; supports loops and recursion. |
+| **State** | Passes data forward; limited memory. | **Stateful**; persistent, shared state across steps. |
+| **Control** | "Black box" agents; harder to debug/steer. | High-grain control; "Human-in-the-loop" support. |
+| **Architecture**| Linear/Tree-based logic. | State Machine / Flowchart logic. |
+| **Best For** | Simple RAG, basic chatbots, one-shot tasks. | Multi-agent systems, autonomous coding, complex reasoning. |
 
+##### **Summary of Usage**
+*   **LangChain** is like a **Standard Operating Procedure**: Step A $\rightarrow$ Step B $\rightarrow$ Step C. It is excellent for straightforward data retrieval (RAG) and simple prompt-response tasks.
+*   **LangGraph** is like a **Feedback Loop**: It allows an agent to try a task, check the result, and **loop back** to try again if it failed. It is the industry standard for building "Agents" that need to reason and iterate.
+##### **When to Use Each**
+- Use LangChain when your application follows a predictable, straightforward path, such as summarising a document or a simple Q&A bot that fetches information and provides an answer. It is the faster, easier tool for rapid prototyping.
+- Use LangGraph for "messy" workflows where the AI needs to reason, iterate, or collaborate. It is essential for multi-agent orchestration (e.g., one agent writes code, another tests it and sends it back if it fails) and systems requiring human-in-the-loop approvals.
+##### **How They Interact**
+LangGraph is **built on top** of LangChain. You use LangChain to create the individual components (the "Nodes") and LangGraph to define the rules of how they interact and when they should repeat steps.
 #### LangSmith
 Lang Smith to monitor what's going on in your Lang graph graph.
 
