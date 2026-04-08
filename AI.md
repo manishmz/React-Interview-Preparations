@@ -239,3 +239,6 @@ and vector database for semantic search instead of keyword matching, recommendat
 - Analyze the results, by calling api https://api.openai.com/v1/evals/YOUR_EVAL_ID/runs/YOUR_RUN_ID, pass runid. and you will get detail result of run
 - go through https://api.openai.com/v1/evals for more details
 
+##### Interview questions:
+###### What is hallucination in llm and how to prevent it?
+- When models madeup some answer that sounds confident instead of saying "I don't know".
