@@ -174,24 +174,32 @@ audio models for transcriptions: - hugging space "openai/whiser-medium.en" - ope
 There is no such best model, instead it should be for particularl model whats the best model.
 Whats the right LLM for the task in hand.
 <img width="722" height="636" alt="image" src="https://github.com/user-attachments/assets/234021e3-fb8b-4942-972b-aaff07fe5b43" />
+
 Context window - Total history it had of our conversation
 Even if you are using free LLM model, but still it costing you it run that model on your machine, hardware cost. or if your hosting it somewhere.
 <img width="713" height="552" alt="image" src="https://github.com/user-attachments/assets/c1ad9e18-6106-4f4b-8db5-589d2f0031a5" />
 <img width="942" height="623" alt="image" src="https://github.com/user-attachments/assets/3623a2f7-9458-4230-bd66-e92ca4b94b3a" />
 <img width="747" height="502" alt="image" src="https://github.com/user-attachments/assets/10c548eb-b0bb-47c4-b94f-46b480c9dd31" />
+
 How to evaluate performance of Gen AI solution?
 
 #### RAG (Retrieval Augumented Generation)
 <img width="958" height="663" alt="image" src="https://github.com/user-attachments/assets/e9495350-361b-483c-914f-21bdb7d86b9b" />
-This is a technique used to improve the performance of language models by combining retrieval mechanisms with generative capabilities. Here's how it generally works:
+
+- This is a technique used to improve the performance of language models by combining retrieval mechanisms with generative capabilities. Here's how it generally works:
 1. Retrieval: The system first retrieves relevant information from a large corpus or database. This step involves searching for documents, passages, or data that are pertinent to the query or task at hand.
 2. Augmentation: The retrieved information is then used to augment the input to the language model. This can involve providing the model with additional context or facts that it might not have been able to generate on its own.
 3. Generation: Finally, the language model generates a response or output based on both the original input and the augmented information. This can lead to more accurate, informative, and contextually relevant responses.
 RAG is particularly useful in scenarios where the language model needs access to up-to-date information or specialized knowledge that isn't contained within its pre-trained parameters. By leveraging external data sources, RAG can enhance the model's ability to provide accurate and contextually rich outputs.
+
 <img width="1007" height="642" alt="image" src="https://github.com/user-attachments/assets/22b36589-e65f-417c-b3ab-98d94166cc34" />
 <img width="882" height="675" alt="image" src="https://github.com/user-attachments/assets/17075f6a-9469-4abb-bdf6-787029043560" />
 <img width="1116" height="612" alt="image" src="https://github.com/user-attachments/assets/4d7f4187-a566-4acd-b459-f4e320b73824" />
 <img width="1202" height="657" alt="image" src="https://github.com/user-attachments/assets/e6285997-6c7e-47fa-a3d7-0980b7eb0f3b" />
+
+We use embeddings (i.e embeddings turn words, sentences, or documents into vectors (lists of numbers) that represent their meaning)
+and vector database for semantic search instead of keyword matching, recommendations (product recommendation), clustering & clasification.
+
 <img width="1166" height="637" alt="image" src="https://github.com/user-attachments/assets/87c2138c-8f8e-466a-b9d7-092fb75618bb" />
 <img width="1177" height="680" alt="image" src="https://github.com/user-attachments/assets/d22756c1-05ff-47b1-90bd-61876a781554" />
 <img width="787" height="391" alt="image" src="https://github.com/user-attachments/assets/cd25e38a-dd53-4d08-b672-de68c8fe2cd9" />
