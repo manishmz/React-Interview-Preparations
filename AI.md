@@ -242,3 +242,22 @@ and vector database for semantic search instead of keyword matching, recommendat
 ##### Interview questions:
 ###### What is hallucination in llm and how to prevent it?
 - When models madeup some answer that sounds confident instead of saying "I don't know".
+
+##### Customer says the chabot gives wrong answers. What will you check?
+- Is the answer factually incorrect, outdated, or irrelevant? Is it partially correct but misleading?
+- the knowledge base is outdated, For RAG systems: whether the retrieval step is pulling the right documents.
+- Pass websearch tool to get the more knowledge, If using RAG might need to look into the chuncking strategy, embedding model.
+- Correcting the System prompt and instruction, should have context and history.
+- Check the user hit the context length, does user context or conversation history is being truncated because of context length.
+- Check model configuration, tempreature, model version, max token
+- Whether its hallucinating instead of saying 'I don't know'
+- If needed, I would: Add answer verification or fallback responses, or route complex queries to human
+
+ ##### How to reduce cost of LLM System?
+ - Use the right model for the right task: give your android app example, use smaller or cheaper models for Simple rewrites or summarization, Reserve large models only for complex reasoning
+ - Reduce token usage: Since most LLM pricing is token‑based, Shorten system prompts, Remove redundant instructions, Limit conversation history (smart truncation)
+ - Optimize prompts: Use structured outputs (JSON) to prevent rambling answers, Make prompts concise and unambiguous, Avoid verbose “explanations” unless required
+ - Implement caching: Cache LLM responses, Cache embeddings, Cache retrieved documents in RAG systems
+ - Use Retrieval‑Augmented Generation (RAG)
+ - Tune parameters, Lower temperature to reduce retries, Set appropriate max tokens to avoid long responses, Avoid excessive tool calls
+ - Monitor and measure, 
