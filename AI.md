@@ -261,3 +261,10 @@ and vector database for semantic search instead of keyword matching, recommendat
  - Use Retrieval‑Augmented Generation (RAG)
  - Tune parameters, Lower temperature to reduce retries, Set appropriate max tokens to avoid long responses, Avoid excessive tool calls
  - Monitor and measure, 
+
+##### When should we Not use GenAI?
+- deterministic correctness - for same input we need same output, Financial calculations, billing invoice, medical dosage
+- high risk domains such as medical, legal judgement because GenAI sounds confident even its wrong
+- risk of hallucination outweighs the benefits
+- Real‑time, ultra‑low‑latency systems - GenAI has higher latency
+- When cost is too high
