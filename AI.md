@@ -85,37 +85,43 @@ Lang Smith to monitor what's going on in your Lang graph graph.
 <img width="718" height="625" alt="image" src="https://github.com/user-attachments/assets/c0b6e3dd-9705-4c49-8950-024d7b7d3810" />
 <img width="450" height="497" alt="image" src="https://github.com/user-attachments/assets/ab16bf50-32d2-4784-93aa-7e3f941739b2" />
 <img width="532" height="467" alt="image" src="https://github.com/user-attachments/assets/e27d9fc9-3026-49d2-bd75-9581ca5d53e0" />
+
 #### What Matter
 https://connectwise.udemy.com/course/the-complete-agentic-ai-engineering-course/learn/lecture/50769785#overview
 
 #### LLM Engineering Building Blocks
 <img width="881" height="457" alt="image" src="https://github.com/user-attachments/assets/0c6d81c3-87af-47ca-9521-ed29bb524a85" />
 
-##### Closed Source Frontier LLM
-GPT from OpenAI
-Claude from Aunthropic
-Gemini from Google
-Grok from X.ai
+##### Comparison of Closed‑Source and Open‑Source LLMs
 
-##### Open Source LLM
-Llama from Meta - 1st model
-Mixtral from Mistral
-Qwen from Alibaba Cloud
-Gemma from Google
-Phi from Microsoft
-DeepSeek from DeepSeek AI (Famous when launched due to low costing around 4M$ for training the model)
-GPT-OSS from OpenAI
+| Category | Model Name | Organization | Notes |
+|--------|-----------|--------------|-------|
+| Closed Source Frontier LLM | GPT | OpenAI | Widely used in enterprise and consumer GenAI applications |
+| Closed Source Frontier LLM | Claude | Anthropic | Strong focus on safety and alignment |
+| Closed Source Frontier LLM | Gemini | Google | Deep integration with Google ecosystem |
+| Closed Source Frontier LLM | Grok | xAI | Designed for real‑time and social data use cases |
+| Open Source LLM | LLaMA | Meta | First major open‑weight frontier model release |
+| Open Source LLM | Mixtral | Mistral AI | Mixture‑of‑Experts architecture, high efficiency |
+| Open Source LLM | Qwen | Alibaba Cloud | Popular in multilingual and Asian markets |
+| Open Source LLM | Gemma | Google | Lightweight, developer‑friendly open models |
+| Open Source LLM | Phi | Microsoft | Small, efficient models optimized for reasoning |
+| Open Source LLM | DeepSeek | DeepSeek AI | Gained attention due to low training cost (~$4M) |
+| Open Source LLM | GPT‑OSS | OpenAI | Open‑source initiative from OpenAI |
 
 <img width="860" height="460" alt="image" src="https://github.com/user-attachments/assets/44fcbfc3-43fe-452e-a2d2-6161afeb53ab" />
+
 #### What is Transformers
 - The Transformer is a type of neural network architecture that has become foundational in the field of natural language processing (NLP) and beyond. Introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017, the Transformer model has revolutionized how we approach tasks like translation, text generation, and more.
 <img width="917" height="427" alt="image" src="https://github.com/user-attachments/assets/ae300bbc-d6e9-4075-95a7-fcd5de551a50" />
 
 ##### Parameters and tokens in LLM
-Parameters determines how big is LLM. Its from millions to trillions of parameters. More the parameter more the size and intellegent llm be. Its only defined how much data it trians on.
-Tokens - When we send a text to llm, it creates a tokens out of it. each word or half of the word can be the token. Less common words (and invented words) get broken into multiple tokens.
+**Parameters** determines how big is LLM. Its from millions to trillions of parameters. More the parameter more the size and intellegent llm be. Its only defined how much data it trians on.  Library analogy - Training data = books read, Parameters = knowledge stored in the brain, More parameters = larger “mental capacity”
+
+**Tokens** When we send a text to llm, it creates a tokens out of it. each word or half of the word can be the token. Less common words (and invented words) get broken into multiple tokens.
 LLM api cost is based on number of input tokens and number of output tokens.
+
 <img width="892" height="286" alt="image" src="https://github.com/user-attachments/assets/3007555e-945a-43b5-b2e1-a810e8b9a52f" />
+
 - token-count threshold, It is important to set a token-count threshold such as 90% of the model's maximum token limit, for truncating history.
 - So that it will create a room for history
 - example
@@ -135,8 +141,8 @@ Your code sees the history hit 900 tokens and truncates (deletes) the oldest mes
 - You can add conditional prompt in the system prompt based on the user message, it will reduce sending extra tokens always to the api.
 example given below. Not a proper way to use it. instead we use RAG
 <img width="1460" height="380" alt="image" src="https://github.com/user-attachments/assets/bbfda52b-db90-4cd4-9fc5-9a372e7e2ee5" />
-- 
-  <img width="1331" height="182" alt="image" src="https://github.com/user-attachments/assets/e120d3ac-a38d-4cae-b90a-905805a6c42e" />
+ <img width="1331" height="182" alt="image" src="https://github.com/user-attachments/assets/e120d3ac-a38d-4cae-b90a-905805a6c42e" />
+
 #### Hugging Face
 - Hugging Face is a leading open-source platform and community for AI, acting as a "GitHub for Machine Learning" where users can share, discover, and collaborate on models, datasets, and demos
 <img width="1126" height="670" alt="image" src="https://github.com/user-attachments/assets/2d0b27f1-322b-464d-8bd1-85b794f09c32" />
@@ -152,6 +158,7 @@ example given below. Not a proper way to use it. instead we use RAG
 ##### Overview
 - Diffusion models are a class of generative models that have gained attention for their ability to generate high-quality data, such as images. They are based on the idea of gradually transforming a simple distribution (like Gaussian noise) into a complex data distribution through a series of steps.
 - Transformers are a type of neural network architecture that has become foundational in natural language processing (NLP) and other domains. They are known for their ability to handle sequential data efficiently through mechanisms like self-attention.
+
 ##### Comparison
 - Purpose: Diffusion models are primarily used for generative tasks, especially in image synthesis, while Transformers are versatile and widely used in NLP and other sequential data tasks.
 - Mechanism: Diffusion models rely on a gradual transformation process, whereas Transformers use attention mechanisms to process data.
@@ -268,3 +275,7 @@ and vector database for semantic search instead of keyword matching, recommendat
 - risk of hallucination outweighs the benefits
 - Real‑time, ultra‑low‑latency systems - GenAI has higher latency
 - When cost is too high
+
+##### Projects
+###### Resume chatbot
+- Used response cache prompting, for saving a cost. Convert user question to embedding then search it in vector databases of user asked questions, if it greater than some threshold return the answer from cache. 
