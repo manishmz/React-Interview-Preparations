@@ -173,9 +173,14 @@ ex: lets says, If we 16 bits or 32 bits for storing the data for parameters, Now
 #### Projects
 - In screenconnect we have a meeting session, same as teams, So we use AI to create meeting minutes, where we record the audio, then transcript it to text 
 audio models for transcriptions: - hugging space "openai/whiser-medium.en" - open source, gpt-40-mini-transcribe paid model
+- Tell them instead of using gpt-40-mini-transcribe we have used "azure speech sdk" which is cheaper and dno't need llm models.
+- Meeting notes will contain: Meeting summary, Key decisions, Action items
+
 <img width="1010" height="610" alt="image" src="https://github.com/user-attachments/assets/4676f937-1dc8-4aae-84af-31fc9f6f8592" />
 <img width="938" height="392" alt="image" src="https://github.com/user-attachments/assets/29fcd798-7b2c-4a9e-a46c-b7b052e74543" />
 <img width="908" height="261" alt="image" src="https://github.com/user-attachments/assets/88128ecb-9b37-45f2-b538-02268b8d3d79" />
+<img width="922" height="656" alt="image" src="https://github.com/user-attachments/assets/2fc2e9c0-11a2-489d-9c83-175c47acaf5e" />
+<img width="861" height="583" alt="image" src="https://github.com/user-attachments/assets/5473e718-fe15-4ed5-aa22-27fae7c9d7dc" />
 
 #### Which LLM is best one?
 There is no such best model, instead it should be for particularl model whats the best model.
