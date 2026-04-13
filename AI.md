@@ -212,6 +212,8 @@ RAG is particularly useful in scenarios where the language model needs access to
 We use embeddings (i.e embeddings turn words, sentences, or documents into vectors (lists of numbers) that represent their meaning)
 and vector database for semantic search instead of keyword matching, recommendations (product recommendation), clustering & clasification.
 
+- Use tools like FAISS and LlamaIndex
+- Chroma uses FAISS / SQLite / DuckDB internally
 <img width="1166" height="637" alt="image" src="https://github.com/user-attachments/assets/87c2138c-8f8e-466a-b9d7-092fb75618bb" />
 <img width="1177" height="680" alt="image" src="https://github.com/user-attachments/assets/d22756c1-05ff-47b1-90bd-61876a781554" />
 <img width="787" height="391" alt="image" src="https://github.com/user-attachments/assets/cd25e38a-dd53-4d08-b672-de68c8fe2cd9" />
