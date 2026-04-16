@@ -215,6 +215,13 @@ and vector database for semantic search instead of keyword matching, recommendat
 
 - Use tools like FAISS and LlamaIndex
 - Chroma uses FAISS / SQLite / DuckDB internally
+- Use Hierarchical RAG technique to create a summary document of data. for ex. lets say in a company's document, the salaries are scattered over all documents, now user asked question "Who has the higest salary?", you can't pass chunks for this scenario, you will create a summary of salaries in a doc, create a chunks of it.
+- If user asked "Who is manish" and then the next question is "What his position in this organisation.", Now in this question llm will not know whom its talking about. So in chat, we need to pass the combined user questions for embedding.
+This implementation will have issue, while fetching the context from question, we will not get the correct chunks.
+Solution is to rewrite the query by passing current question and the history to llm.
+and use that question to fetch the context.
+- Query rewriting is efficient but can't hurt use because of while rewriting the query it can add other words for which will get the mebedding instead what user asked.
+
 <img width="1166" height="637" alt="image" src="https://github.com/user-attachments/assets/87c2138c-8f8e-466a-b9d7-092fb75618bb" />
 <img width="1177" height="680" alt="image" src="https://github.com/user-attachments/assets/d22756c1-05ff-47b1-90bd-61876a781554" />
 <img width="787" height="391" alt="image" src="https://github.com/user-attachments/assets/cd25e38a-dd53-4d08-b672-de68c8fe2cd9" />
