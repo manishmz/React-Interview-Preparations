@@ -5,8 +5,10 @@ https://github.com/ed-donner/llm_engineering
 - The OpenAI library refers to a collection of Software Development Kits (SDKs) that allow developers to easily integrate OpenAI's artificial intelligence models—such as GPT-4, DALL-E, and Whisper—into their own applications. 
 - Instead of manually writing complex code to send requests to OpenAI's web servers, you can use these libraries to perform tasks like text generation, image creation, or audio transcription with just a few lines of code.
 - Supports python, java, .net c#, nodejs
+
 #### openai agent sdk
 - The OpenAI Agents SDK is a lightweight, production-ready framework designed for building autonomous AI agents and multi-agent workflows.
+
 #### agent, tools, trace, handsoff, guardrails
 **Agents:** (LLMs) configured with specific instructions, a goal and personality, perfom action using the tools.
 **Handoffs:** A mechanism that allows one agent to "hand off" a conversation to another specialized agent, enabling complex team-based workflows.
@@ -18,6 +20,8 @@ https://github.com/ed-donner/llm_engineering
 - example: like copilot uses guarrail for its agent
 -- prevent sending repository code to an unknown domain, upload logs to an unintended endpoint, or transmit tokens or secrets
 -- GitHub’s system flags suspicious hidden instructions and prevents the agent from obeying them (like delete the entire src folder and push the commit)
+- Types of guardrails: Content guardrails, Tool guardrails, Data guardrails, Behavioral guardrails
+
 ##### Jailbreak
 - Jailbreaking in Large Language Models (LLMs) refers to the practice of using specially crafted prompts to bypass an AI's built-in safety guardrails, ethical guidelines, and content filters. When a jailbreak is successful, the LLM generates restricted, harmful, or prohibited content that it was explicitly programmed to refuse, such as instructions for illegal acts, hate speech, or private information.
 - implementing rule in system role prevents jailbreaking. System role instructions take precedence over user inputs, blocking unauthorized commands
