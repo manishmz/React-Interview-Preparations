@@ -2,8 +2,17 @@
 https://github.com/ed-donner/llm_engineering
 # Terminologies
 #### openai library
+- The OpenAI library refers to a collection of Software Development Kits (SDKs) that allow developers to easily integrate OpenAI's artificial intelligence models—such as GPT-4, DALL-E, and Whisper—into their own applications. 
+- Instead of manually writing complex code to send requests to OpenAI's web servers, you can use these libraries to perform tasks like text generation, image creation, or audio transcription with just a few lines of code.
+- Supports python, java, .net c#, nodejs
 #### openai agent sdk
+- The OpenAI Agents SDK is a lightweight, production-ready framework designed for building autonomous AI agents and multi-agent workflows.
 #### agent, tools, trace, handsoff, guardrails
+**Agents:** (LLMs) configured with specific instructions, a goal and personality, perfom action using the tools.
+**Handoffs:** A mechanism that allows one agent to "hand off" a conversation to another specialized agent, enabling complex team-based workflows.
+**Tools:** Actions an agent can take, such as executing Python functions, performing web searches, or interacting with databases.
+**Guardrails:** Built-in safety checks that validate inputs and outputs to ensure the agent follows specific policies or formatting rules.
+
 ##### GuardRails
 - Guardrails in agentic AI are rules and safety mechanisms that keep autonomous AI agents acting safely, ethically, and within approved boundaries—preventing them from causing harm or taking unintended actions.
 - example: like copilot uses guarrail for its agent
