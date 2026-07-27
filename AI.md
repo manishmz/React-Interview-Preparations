@@ -377,6 +377,8 @@ Monitoring the overall behavior, performance, and health of AI agents.
 - Token consumption
 - Success/failure rates
 
+##### Use middleware to implement all the above AI concepts in code
+
 ##### Interview questions:
 ###### What is hallucination in llm and how to prevent it?
 - When models madeup some answer that sounds confident instead of saying "I don't know".
