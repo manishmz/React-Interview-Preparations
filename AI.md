@@ -1,5 +1,9 @@
 # Github Links
 https://github.com/ed-donner/llm_engineering
+
+# Video links
+https://www.youtube.com/watch?v=I4sGn8Z1vpI
+
 # Terminologies
 #### openai library
 - The OpenAI library refers to a collection of Software Development Kits (SDKs) that allow developers to easily integrate OpenAI's artificial intelligence models—such as GPT-4, DALL-E, and Whisper—into their own applications. 
@@ -233,12 +237,35 @@ and vector database for semantic search instead of keyword matching, recommendat
 This implementation will have issue, while fetching the context from question, we will not get the correct chunks.
 Solution is to rewrite the query by passing current question and the history to llm.
 and use that question to fetch the context.
-- Query rewriting is efficient but can't hurt use because of while rewriting the query it can add other words for which will get the mebedding instead what user asked.
+- Query rewriting is efficient but can't hurt use because of while rewriting the query it can add other words for which will get the embedding instead what user asked.
 
 <img width="1166" height="637" alt="image" src="https://github.com/user-attachments/assets/87c2138c-8f8e-466a-b9d7-092fb75618bb" />
 <img width="1177" height="680" alt="image" src="https://github.com/user-attachments/assets/d22756c1-05ff-47b1-90bd-61876a781554" />
 <img width="787" height="391" alt="image" src="https://github.com/user-attachments/assets/cd25e38a-dd53-4d08-b672-de68c8fe2cd9" />
 
+##### Semantic Chunking
+Semantic Chunking is a context-aware text splitting technique that groups sentences by meaning rather than splitting by fixed sizes. This preserves semantic relationships and dramatically improves retrieval accuracy in RAG systems by ensuring each chunk contains complete, related ideas.
+
+<img width="917" height="769" alt="image" src="https://github.com/user-attachments/assets/7919e1bf-26f2-482d-aa48-bb48d4b294bf" />
+
+##### ANN Indexing
+- Approximate nearest neighbor (ANN) search — or ANN search — is a type of nearest neighbor search and a technique used in vector databases to find data points closest to a given query point with a certain level of approximation.
+- Whereas exact nearest neighbor (ENN) matches with every vector in the database and find the mathematically closet ones
+- ANN is faster and uses index/data structre to avoid comparing against every vector. its sacrifice small amount of accuracy
+
+##### Query Retrieval - BM25 and Dense vector
+- Best Matching 25 is a keyword based search algorithm used to find the documents that are the most relevant to a text query
+ - Use for exact keyword matching
+- Dense vector for semantic search (having same meaning)
+- Mordern RAG uses hybrid search
+ - User query > Do BM25 and Dense vector search  > Combined the result > Rerank > Top-K chunks > LLM 
+
+##### Cache the repeated query and hot embeddings for faster retrieval
+##### For faster retrival do metadata filtering
+##### Citations
+- It tells user where this LLM answer information came from.
+- In every chunks we maintain metadata having the document id, chunks id
+- Add metadata so that we can map the generated answer back to the source
 #### Training
 ##### Generalization
 <img width="556" height="536" alt="image" src="https://github.com/user-attachments/assets/7ab07cfc-21d8-4d20-aa58-a891ffb1ea35" />
