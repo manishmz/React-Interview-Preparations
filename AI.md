@@ -444,6 +444,16 @@ Monitoring the overall behavior, performance, and health of AI agents.
 - Chunk-level ambiguity: Documents are often split into chunks. The model may cite an entire document even though the relevant statement exists only in a specific chunk, page, or section.
 - the citation problem in RAG is ensuring that every generated claim is correctly, accurately, and verifiably grounded in the retrieved source documents.
 
+##### How would you measure LLM latency for a chat app?
+- check for TTFT (Time to first token) or TPS (tokens per second)
+- TTFT: how long the users wait before seeing the first generated token
+- how fast the response stream once the generation already started
+- for example: if the input is large then TTFT is increases because the model spends more time to process the input itself during prefill phase. But if the model is very large and GPUs are overloaded then the TPS drops because the token decoding becomes slower.
+- In case of chat app, TTFT is psychologically extremely imp, Even if the full answer takes time, user feels that system is faster if the streaming start quickly.
+
+##### Your rag works for 10k documents but fails at 100 million
+- Here interviewer is testing whether you understand that scaling RAG becomes a distributed problem. A single index is on one machine is no longer practical.
+- So we need sharding and distributed retrieval
 ##### Projects
 ###### Resume chatbot
 - Used response cache prompting, for saving a cost. Convert user question to embedding then search it in vector databases of user asked questions, if it greater than some threshold return the answer from cache. 
