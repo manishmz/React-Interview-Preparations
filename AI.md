@@ -454,6 +454,34 @@ Monitoring the overall behavior, performance, and health of AI agents.
 ##### Your rag works for 10k documents but fails at 100 million
 - Here interviewer is testing whether you understand that scaling RAG becomes a distributed problem. A single index is on one machine is no longer practical.
 - So we need sharding and distributed retrieval
+
+##### Design memory for agentic application
+This is memory architechture question. Think of in 4 layers:
+1. Short term memory: its a working context for current task, like current objectives, recent tool outputs, intermidiate reasoning, pending steps. This usually lives inside the context window.
+2. Long term memory: its a persistent knowledge that survives behind the single interaction. like user prefernces, learned facts, historical context, past decisions. This should be store extrnally and retrive when relevant.
+3. Shared memory: important in multi agentic system, used as coordination layer between the agents. for example, if one agent researcehs , another writes, another validates they need shared visiblity inot task progress and intermidiate output.
+4. Episodic memory: its a timestamp memory of past experiences or execution episodes that system can learn from.
+
+Tradeoff: better memory improves the context quality, but it also increase storage retrieval complexity and consistency challenges
+
+##### You retrieve documents contain prompt injection. How do you defend the system?
+- First we need to treat the retrieved document as a untrusted data
+- the system prompt should be seperate the developer content than the retrieved data
+- the retrieved content should not trigger any actions directly.every tool calls should be validate in server side.
+- If the gaent only needs read access then do not write/delete permission
+- we can add prompt injection detection layer to scan the retrieved documents  for suspicious injection. but detection should be additional defence and not the primary
+- And for sensitive actions like payments, deletions, external API calls, we should always require explicit approval or human confirmation. human in the loop.
+- Prompt rules help, but real security must live outside the prompt
+
+##### Why semantic search isn't enough for production RAG
+- Semantic search is good and useful to understand the meaning and retrive the macthing result. for example, if user asks how do I reset my password? it can still find the document which say "step to recover the account access".
+- But production RAG also reuire the exact lexical matching because some time queries depends on exact token and not meaning. for example, think error codes, api names, function names, config keys, product ids. if you use semantic search in this case it will give so many results.
+- So in this case we need to use keyword based retrieval like BM25. BM25 works using an inverted index which a structure that maps terms to document containing them. so the exact match is faster.
+- So the production needs hybrid retrieval, and rerank the best candidates
+
+##### Recall vs Precision
+- Need balanace of both
+
 ##### Projects
 ###### Resume chatbot
 - Used response cache prompting, for saving a cost. Convert user question to embedding then search it in vector databases of user asked questions, if it greater than some threshold return the answer from cache. 
